@@ -5,9 +5,9 @@
      <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/bootstrap-4/css/bootstrap.min.css">
     <script type="text/javascript" src="assets/js/filter-table.js"></script>
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/popper.min.js"></script>
@@ -19,7 +19,7 @@
 <body>
    <div class="sidebar-container" id="navItem">
   <a href="#" class="navbar-brand">
-    <img src="image/logo.png" height="200">
+    <img src="assets/image/logo.png" height="200">
   </a>
   <ul class="sidebar-navigation">
     

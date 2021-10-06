@@ -19,7 +19,7 @@
 <body>
    <div class="sidebar-container" id="navItem">
   <a href="#" class="navbar-brand">
-    <img src="image/logo.png" height="200">
+    <img src="assets/image/logo.png" height="200">
   </a>
   <ul class="sidebar-navigation">
     
