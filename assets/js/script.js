@@ -3,8 +3,29 @@
     var app = {
         initialize: function () {
             this.login.initialize();
+            this.generatePass.initialize();
         },
-        
+         generatePass: {
+            initialize: function() {
+                this.generatingPass();
+            },
+            generatingPass: function() {
+                var btnGenerate = jQuery('#btnGenerate');
+
+                btnGenerate.click(function() {
+                    
+                       
+
+                    var length = 8,
+                        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+                        retVal = "";
+                        for (var i = 0, n = charset.length; i < length; ++i) {
+                        retVal += charset.charAt(Math.floor(Math.random() * n));
+                    }
+                    jQuery('#txtGenerated').val(retVal);
+                });
+            }
+        },
         login: {
             initialize: function() {
                 this.checkUserLogin();
@@ -22,9 +43,8 @@
 
                     // Check fields
                     if (username == "" || password == "") {
-                        
                         validation_message.addClass('alert-danger');
-                        validation_message.html('Username or password cannot be blank');
+                        validation_message.html('Incorrect username or password');
                             
                     } else {
                         // Send details to DB
@@ -49,6 +69,7 @@
                 });
             }
         }
+       
     }
 
     jQuery(document).ready( function() {
