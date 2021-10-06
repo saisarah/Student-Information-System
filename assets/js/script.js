@@ -3,6 +3,7 @@
     var app = {
         initialize: function () {
             this.login.initialize();
+            this.showPass.initialize();
             this.generatePass.initialize();
         },
          generatePass: {
@@ -10,19 +11,41 @@
                 this.generatingPass();
             },
             generatingPass: function() {
-                var btnGenerate = jQuery('#btnGenerate');
+                var btnGenerate = jQuery('#btnGenerate'),
+                    eyeIcon = jQuery('.far');
+                    btnEye = jQuery('#btnShowPass');
 
                 btnGenerate.click(function() {
-                    
-                       
-
-                    var length = 8,
+                        var length = 8,
                         charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
                         retVal = "";
                         for (var i = 0, n = charset.length; i < length; ++i) {
                         retVal += charset.charAt(Math.floor(Math.random() * n));
                     }
                     jQuery('#txtGenerated').val(retVal);
+                });
+            }
+        },
+        showPass: {
+            initialize: function() {
+                this.showingPass();
+            },
+            showingPass: function() {
+                var btnShow = jQuery('#btnShowPass'),
+                    eyeIcon = jQuery('.far');
+                                       
+                btnShow.click(function() {
+                    eyeIcon.removeClass('fa-eye fa-eye-slash');
+                    var txtShow = document.getElementById("txtGenerated");  
+                    if (txtShow.type === "password") {
+                        eyeIcon.addClass('fa-eye');
+                        txtShow.type = "text";
+                    }
+                    else{
+                        eyeIcon.addClass('fa-eye-slash');
+                        txtShow.type = "password";
+                    }
+                    
                 });
             }
         },
