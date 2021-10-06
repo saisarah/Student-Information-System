@@ -11,7 +11,7 @@
     <script type="text/javascript" src="assets/js/filter-table.js"></script>
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="assets/ootstrap-4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/bootstrap-4/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
     <title>Admin</title>
 </head>
@@ -19,7 +19,7 @@
 <body>
    <div class="sidebar-container" id="navItem">
   <a href="#" class="navbar-brand">
-    <img src="image/logo.png" height="200">
+    <img src="assets/image/logo.png" height="200">
   </a>
   <ul class="sidebar-navigation">
     
@@ -109,8 +109,13 @@
                 
                 <div class="form-group col-md-12">
                   <label>Password *</label>
-                  <input type="text" placeholder="Generated Password" disabled="" class="form-control"><br>
-                  <button type="submit" class="btn btn-success">Generate Password</button>
+                  <div class="input-group mb-3">
+                    <input type="Password" id="txtGenerated" placeholder="Generated Password" class="form-control" placeholder="Recipient's username" disabled>
+                  <div class="input-group-append">
+                    <button id="btnShowPass" class="far fa-eye-slash"></button>
+                  </div>
+                </div>
+                  <button type="submit" id="btnGenerate" class="btn btn-success">Generate Password</button>
                   <button type="submit" style="float: right;" class="btn btn-primary btnSubmit">Submit</button>
                 </div>
 
@@ -183,7 +188,7 @@
             </div>
             <div class="card-footer text-muted bg-transparent">
                   <div class="stats">
-                    <i class="far fa-clock"></i> Last account created 4 minutes ago
+                    <i class="fa fa-clock"></i> Last account created 4 minutes ago
                   </div>
                 </div>
             </div>
@@ -194,7 +199,8 @@
   </div>
 </div>
             
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
