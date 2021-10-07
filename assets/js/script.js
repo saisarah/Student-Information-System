@@ -4,6 +4,7 @@
         initialize: function () {
             this.login.initialize();
             this.showPass.initialize();
+            this.createAcc.initialize();
             this.generatePass.initialize();
         },
          generatePass: {
@@ -45,6 +46,45 @@
                         eyeIcon.addClass('fa-eye-slash');
                         txtShow.type = "password";
                     }
+                    
+                });
+            }
+        },
+        createAcc: {
+            initialize: function() {
+                this.registerNewUser();
+            },
+            registerNewUser: function() {
+                var btnCreateAcc = jQuery('#btnCreateAcc');
+
+                btnCreateAcc.click(function() {
+                    var username = jQuery('#username').val(),
+                        password = jQuery('#txtGenerated').val(),
+                        validation_message = jQuery('.alert');
+
+                    // Refresh warning message appearance
+
+
+                 
+                    
+                        // Send details to DB
+                        jQuery.ajax({
+                            url: "modules/register-acc.php",
+                            type: "post",
+                            data: {
+                                username : username,
+                                password : password
+                            },
+                            success: function(data) {
+                                if (data) {
+                                    validation_message.hide();
+                                    alert(data);
+                                    window.location.href = 'manageAcc.php?registration=' + data;
+                                } else {
+                                    alert("Invalid student number");
+                                }
+                            }
+                        });
                     
                 });
             }
