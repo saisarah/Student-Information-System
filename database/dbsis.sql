@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2021 at 10:13 AM
+-- Generation Time: Oct 07, 2021 at 08:44 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -43,11 +43,14 @@ INSERT INTO `tbl_adminlogin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_profreg`
+-- Table structure for table `tbl_professor`
 --
 
-CREATE TABLE `tbl_profreg` (
+CREATE TABLE `tbl_professor` (
   `id` int(11) NOT NULL,
+  `fitsname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL
@@ -56,15 +59,28 @@ CREATE TABLE `tbl_profreg` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_studreg`
+-- Table structure for table `tbl_student`
 --
 
-CREATE TABLE `tbl_studreg` (
+CREATE TABLE `tbl_student` (
   `id` int(11) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `midname` varchar(255) NOT NULL,
+  `course` varchar(255) NOT NULL,
+  `year` int(255) NOT NULL,
+  `section` varchar(255) NOT NULL,
   `studno` int(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_student`
+--
+
+INSERT INTO `tbl_student` (`id`, `firstname`, `lastname`, `midname`, `course`, `year`, `section`, `studno`, `password`, `status`) VALUES
+(1, 'SARAH GRACE ARLYN', 'OBEN', '-', 'BS COMPUTER SCIENCE', 3, 'C', 20191940, '', '');
 
 --
 -- Indexes for dumped tables
@@ -77,15 +93,15 @@ ALTER TABLE `tbl_adminlogin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_profreg`
+-- Indexes for table `tbl_professor`
 --
-ALTER TABLE `tbl_profreg`
+ALTER TABLE `tbl_professor`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_studreg`
+-- Indexes for table `tbl_student`
 --
-ALTER TABLE `tbl_studreg`
+ALTER TABLE `tbl_student`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -99,16 +115,16 @@ ALTER TABLE `tbl_adminlogin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_profreg`
+-- AUTO_INCREMENT for table `tbl_professor`
 --
-ALTER TABLE `tbl_profreg`
+ALTER TABLE `tbl_professor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tbl_studreg`
+-- AUTO_INCREMENT for table `tbl_student`
 --
-ALTER TABLE `tbl_studreg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `tbl_student`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
