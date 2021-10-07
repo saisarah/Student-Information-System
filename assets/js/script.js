@@ -62,11 +62,6 @@
                         password = jQuery('#txtGenerated').val(),
                         validation_message = jQuery('.alert');
 
-                    // Refresh warning message appearance
-
-
-                 
-                    
                         // Send details to DB
                         jQuery.ajax({
                             url: "modules/register-acc.php",

@@ -104,7 +104,7 @@
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <label>Username *</label>
-                  <input type="text" placeholder="Username or Student Number" class="form-control">
+                  <input type="text" id="username" placeholder="Username or Student Number" class="form-control" required>
                 </div>
                 
                 <div class="form-group col-md-12">
@@ -116,7 +116,7 @@
                   </div>
                 </div>
                   <button type="submit" id="btnGenerate" class="btn btn-success">Generate Password</button>
-                  <button type="submit" style="float: right;" class="btn btn-primary btnSubmit">Submit</button>
+                  <button type="submit" id="btnCreateAcc" style="float: right;" class="btn btn-primary">Submit</button>
                 </div>
 
 
