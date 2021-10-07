@@ -18,11 +18,11 @@
         <form class="form">
           <div class="row">
             <i class="fa fa-user"></i>
-            <input type="text" placeholder="Username" id="username">
+            <input type="text" placeholder="Username" id="username" required>
           </div>
           <div class="row">
             <i class="fa fa-lock"></i>
-            <input type="password" placeholder="Password" id="password">
+            <input type="password" placeholder="Password" id="password" required>
           </div>
           <div class="row button">
             <input type="submit" id="btnlogin"></a>
