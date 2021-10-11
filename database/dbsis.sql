@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2021 at 08:44 AM
+-- Generation Time: Oct 11, 2021 at 10:18 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -48,13 +48,20 @@ INSERT INTO `tbl_adminlogin` (`id`, `username`, `password`) VALUES
 
 CREATE TABLE `tbl_professor` (
   `id` int(11) NOT NULL,
-  `fitsname` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `department` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_professor`
+--
+
+INSERT INTO `tbl_professor` (`id`, `firstname`, `lastname`, `department`, `username`, `password`, `status`) VALUES
+(1, 'JEFFREY', 'COCO', 'CSD', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -80,7 +87,8 @@ CREATE TABLE `tbl_student` (
 --
 
 INSERT INTO `tbl_student` (`id`, `firstname`, `lastname`, `midname`, `course`, `year`, `section`, `studno`, `password`, `status`) VALUES
-(1, 'SARAH GRACE ARLYN', 'OBEN', '-', 'BS COMPUTER SCIENCE', 3, 'C', 20191940, '', '');
+(1, 'SARAH GRACE ARLYN', 'OBEN', '-', 'BS COMPUTER SCIENCE', 3, 'C', 20191940, '', ''),
+(2, 'JUAN PAOLO', 'ORTEGA', 'Z', 'BSCS', 3, 'C', 20192166, '', '');
 
 --
 -- Indexes for dumped tables
@@ -118,13 +126,13 @@ ALTER TABLE `tbl_adminlogin`
 -- AUTO_INCREMENT for table `tbl_professor`
 --
 ALTER TABLE `tbl_professor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_student`
 --
 ALTER TABLE `tbl_student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
