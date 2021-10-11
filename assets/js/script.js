@@ -60,7 +60,12 @@
                 btnCreateAcc.click(function() {
                     var username = jQuery('#username').val(),
                         password = jQuery('#txtGenerated').val(),
+                        userType = jQuery('#userType').val(),
+                        FNProf = jQuery('#FNProf').val(),
                         validation_message = jQuery('.alert');
+
+                        var firstName = FNProf.split(' ').slice(0, -1).join(' ').toUpperCase();
+                        var lastName = FNProf.split(' ').slice(-1).join(' ').toUpperCase();
 
                         // Send details to DB
                         jQuery.ajax({
@@ -68,15 +73,16 @@
                             type: "post",
                             data: {
                                 username : username,
-                                password : password
+                                password : password,
+                                userType : userType,
+                                firstName : firstName,
+                                lastName : lastName
                             },
                             success: function(data) {
                                 if (data) {
                                     validation_message.hide();
                                     alert(data);
                                     window.location.href = 'manageAcc.php?registration=' + data;
-                                } else {
-                                    alert("Invalid student number");
                                 }
                             }
                         });
@@ -86,43 +92,18 @@
         },
         login: {
             initialize: function() {
-                this.checkUserLogin();
+                this.checkToShow();
             },
-            checkUserLogin: function() {
-                var btnlogin = jQuery('#btnlogin');
+            checkToShow: function() {
+                checkShow = jQuery('#checkShow');
 
-                btnlogin.click(function() {
-                    var username = jQuery('#username').val(),
-                        password = jQuery('#password').val(),
-                        validation_message = jQuery('.alert');
-
-                    // Refresh warning message appearance
-                    validation_message.removeClass('warning success');
-
-                    // Check fields
-                    if (username == "" || password == "") {
-                        validation_message.addClass('alert-danger');
-                        validation_message.html('Incorrect username or password');
-                            
-                    } else {
-                        // Send details to DB
-                        jQuery.ajax({
-                            url: "modules/admin-login.php",
-                            type: "post",
-                            data: {
-                                username : username,
-                                password : password
-                            },
-                            success: function(data) {
-                                if (data) {
-                                    validation_message.hide();
-                                    window.location.href = 'admin.php?login=' + data;
-                                } else {
-                                    alidation_message.addClass('alert-danger');
-                                    validation_message.html('The username and password you entered isn’t connected to an account. Please try again.');
-                                }
-                            }
-                        });
+                checkShow.click(function(){
+                    var password = document.getElementById("password");  
+                    if (password.type === "password") {
+                        password.type = "text";
+                    }
+                    else{
+                        password.type = "password";
                     }
                 });
             }
