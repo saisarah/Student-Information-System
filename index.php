@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -10,24 +11,46 @@
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
   </head>
   <body>
-    
+
     <div class="container">
       <div class="wrapper consas" id="consas1" style="width: 400px; margin-left: 35%;">
         <div class="title"><span>Admin Login</span>
         </div>
-        <form class="form">
+        <form class="form" action="modules/admin-login.php" method="post">
           <div class="row">
             <i class="fa fa-user"></i>
-            <input type="text" placeholder="Username" id="username" required>
+            <input type="text" placeholder="Username" name="username" required>
           </div>
           <div class="row">
             <i class="fa fa-lock"></i>
-            <input type="password" placeholder="Password" id="password" required>
+            <input type="password" placeholder="Password" id="password" name="password" required>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="checkShow">
+            <label class="form-check-label" for="checkShow">Show password</label>
           </div>
           <div class="row button">
-            <input type="submit" id="btnlogin"></a>
-          <div class="alert alert-custom text-center" style="margin-top:5px;" role="alert"></div>
+            <input type="submit" id="btnlogin" name="login_btn"></a>
+          <?php 
+                        if(@$_GET['Empty']==true)
+                        {
+                    ?>
+                        <div class="alert-danger alert-custom text-center"style="margin-top:5px; margin-left: 10px; width: 95%;"><?php echo $_GET['Empty'] ?></div>                                
+                    <?php
+                        }
+                    ?>
+
+
+                    <?php 
+                        if(@$_GET['Invalid']==true)
+                        {
+                    ?>  
+                        <div class="alert-danger alert-custom text-center"style="margin-top:5px; margin-left: 10px; width: 95%;"><?php echo $_GET['Invalid'] ?></div>                                
+                    <?php
+                        }
+                    ?>
           </div>
+          
         </form>
       </div>
 
