@@ -5,6 +5,9 @@
 
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $userType = $_POST['userType'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
     $status = 'Active';
 
 
@@ -17,27 +20,47 @@
 
     // Connect to DB ($conn)
     include('dbConn.php');
-    $sql1 = "SELECT studno FROM tbl_student WHERE studno = '". $username ."'"; 
+    //Student
+    $sql1 = "SELECT * FROM tbl_student WHERE studno = '". $username ."'";
     $result = $conn->query($sql1);
-    
-    if ($result->num_rows > 0) {
-            
+    //Prof
+    $query = "SELECT * FROM tbl_Professor WHERE firstname = '". $firstName ."' AND lastname = '". $lastName ."'";
+    $res = $conn->query($query);
+if(is_numeric($username) && $userType == 'Student') {
+    if ($result->num_rows > 0){
+        //Retrieving data from data table
+        while($row = $result->fetch_assoc()) {
+            $studno = $row['studno'];
+            $pass = $row['password'];
+        }
+        if ($studno == $username && $pass != "") {
+            echo "Account already existed";
+        }elseif ($studno == $username && $pass == ""){
             $sql = "UPDATE tbl_student SET password = ' $encrypted_password', status = '$status' WHERE studno = '". $username ."'";
-            // Fire request
 
             if ($conn->query($sql) === TRUE) {
-            echo "Account successfully created";            
-        } 
-        else{
-            echo "Student number not found";            
+                echo "Account successfully created";
+            }
         }
 
-    } else {
+    }else{
+            echo "Invalid student number";
+        }
+}elseif (is_string($username) && $userType == 'Professor'){
+     if ($res->num_rows > 0){
+       $setProf = "UPDATE tbl_Professor SET username = ' $username',  password = ' $encrypted_password', status = '$status' WHERE firstname = '". $firstName ."' AND lastname = '". $lastName ."'";
 
+            if ($conn->query($setProf) === TRUE) {
+                echo "Account successfully created";
+            }
+
+    }else{
+        echo "Invalid Full name";
     }
 
-    
-
+}else{
+    echo "Invalid entry, Please check the user type";
+}
     // Close connection ($conn)
     $conn->close();
 
