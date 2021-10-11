@@ -15,7 +15,11 @@
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
     <title>Admin</title>
 </head>
+<?php
+    session_start();
+    if(isset($_SESSION['username'])){
 
+?>
 <body>
    <div class="sidebar-container" id="navItem">
   <a href="#" class="navbar-brand">
@@ -58,7 +62,12 @@
         <i class="fa fa-tasks" aria-hidden="true"></i> Manage Accounts
       </a>
     </li>
-  </ul>
+    <li>
+      <a href="logout.php">
+        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+      </a>
+    </li>
+    </ul>
 </div>
 
 
@@ -115,6 +124,19 @@
                     <button id="btnShowPass" class="far fa-eye-slash"></button>
                   </div>
                 </div>
+                <label>User *</label>
+                  <select id="userType" class="form-control">
+                    <option selected>Choose ...</option>
+                    <option>Student</option>
+                    <option>Professor</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-12">
+                  <label>For Professors *</label>
+                  <div class="input-group mb-3">
+                  <input type="text" id="FNProf" placeholder="Enter full name. Ex: John Doe" class="form-control" required>
+                  </div>
+
                   <button type="submit" id="btnGenerate" class="btn btn-success">Generate Password</button>
                   <button type="submit" id="btnCreateAcc" style="float: right;" class="btn btn-primary">Submit</button>
                 </div>
@@ -198,7 +220,14 @@
     </div>
   </div>
 </div>
-            
+<?php 
+    }
+    else
+    {
+        header("location:index.php");
+    }
+
+?>         
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>

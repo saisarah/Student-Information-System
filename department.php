@@ -17,7 +17,12 @@
 </head>
 
 <body>
-   <div class="sidebar-container" id="navItem">
+<?php
+    session_start();
+    if(isset($_SESSION['username'])){
+
+?>
+<div class="sidebar-container" id="navItem">
   <a href="#" class="navbar-brand">
     <img src="assets/image/logo.png" height="200">
   </a>
@@ -58,6 +63,11 @@
         <i class="fa fa-tasks" aria-hidden="true"></i> Manage Accounts
       </a>
     </li>
+    <li>
+      <a href="logout.php">
+        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+      </a>
+    </li>  
   </ul>
 </div>
 
@@ -166,7 +176,14 @@
     </div>
   </div>
 </div>
-            
+<?php 
+    }
+    else
+    {
+        header("location:index.php");
+    }
+
+?>            
 
 </body>
 

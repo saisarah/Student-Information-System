@@ -11,15 +11,17 @@
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
     <title>Admin</title>
 </head>
-
 <body>
+<?php
+    session_start();
+    if(isset($_SESSION['username'])){
 
+?>
    <div class="sidebar-container" id="navItem">
   <a href="#" class="navbar-brand">
     <img src="assets/image/logo.png" height="200">
   </a>
   <ul class="sidebar-navigation">
-    
     <li>
       <a href="#" class="active">
         <i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard
@@ -53,6 +55,11 @@
     <li>
       <a href="manageAcc.php">
         <i class="fa fa-tasks" aria-hidden="true"></i> Manage Accounts
+      </a>
+    </li>
+    <li>
+      <a href="logout.php">
+        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
       </a>
     </li>
   </ul>
@@ -219,7 +226,18 @@
       </div>
    </div>
             
+<?php 
+    }
+    else
+    {
+        header("location:index.php");
+    }
 
+?>
+   
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

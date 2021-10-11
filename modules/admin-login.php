@@ -1,4 +1,6 @@
+
 <?php
+session_start ();
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -12,11 +14,11 @@
 
     // Fire request
     if ($result->num_rows > 0) {
-       
-        
-        echo "Succesful";
-    } else {
-        echo false;
+        $_SESSION['username'] = $_POST['username'];       
+        header("location: ../admin.php?login=success");
+
+        } else {
+        header("location: ../index.php?Invalid=Please Enter Correct Username and Password ");
     }
 
     // Close connection ($conn)
