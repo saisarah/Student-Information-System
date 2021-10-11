@@ -115,13 +115,5 @@ form .signup-link a:hover{
   text-decoration: underline;
 }
 .alert-custom{
-  height: 10px;
-  width: 90%;
-  line-height: 5px;
-  font-size: 10px;
-  font-weight: 600;
-  text-align: center;
-  padding: 12px ;
-  margin: 12px 0;
-  left: 5%;
+  
 }
