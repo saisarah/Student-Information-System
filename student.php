@@ -77,12 +77,87 @@
   <div class="content-container">
     <nav class="navbar navbar-light bg-light  justify-content-between">
       <a class="navbar-brand">Student</a>
-      <form class="form-inline">
+      <div class="form-inline">
       <input type="text" id="myInput" class="form-control mr-sm-2" onkeyup="myFunction()" placeholder="Search for name..">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-          Add Subject
+          Add Student
         </button>
-    </form>
+      </div>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+               <h4 class="modal-title">Add Student</h4>
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+             </div>
+             <!-- Modal body -->
+            <div class="modal-body justify-content-center">
+              <form>
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" placeholder="John" class="form-control">
+                </div>
+                <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Last Name</label>
+                  <input type="text" placeholder="Doe"  class="form-control">
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label>Middle Name</label>
+                  <input type="text" placeholder="Middle Name"  class="form-control">
+                </div>
+               </div>
+                <div class="form-group">
+                  <label>Course</label>
+                  <select id="inputCourse" class="form-control">
+                    <option selected>Choose</option>
+                    <option>BSCS</option>
+                    <option>BSIT</option>
+                    <option>BSEMC</option>
+                    <option>BSIS</option>
+                  </select>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                  <label for="inputState">Student No.</label>
+                  <input type="number" placeholder="Student No."  class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Year</label>
+                  <select class="form-control">
+                    <option selected>Choose</option>
+                    <option>1st</option>
+                    <option>2nd</option>
+                    <option>3rd</option>
+                    <option>4th</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Section</label>
+                  <select class="form-control">
+                    <option selected>Choose</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                  </select>
+                </div>
+                 
+              </div>
+            </form>
+      </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </nav>
       <div class="container-fluid">
         <div class="row">
@@ -93,126 +168,8 @@
               <p class="card-category">Total Student</p>
             </div>
             <div class="card-body table-responsive">
-              <table id="myTable" class="table table-hover">
-                <thead class="text-warning">
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Course</th>
-                  <th>Year</th>
-                  <th>Section</th>
-                  <th>Status</th>
-                  <th>Student No.</th>
-                  <th>Password</th>
-                  <th>Account Status</th>
-                  <th scope="col">Actions</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Sarah Grace Arlyn Oben</td>
-                    <td>BSCS</td>
-                    <td>3rd</td>
-                    <td>C</td>
-                    <td>Regular</td>
-                    <td>20191940</td>
-                    <td>*******</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                   <tr>
-                    <td>2</td>
-                    <td>Juan Paolo Ortega</td>
-                    <td>BSCS</td>
-                    <td>3rd</td>
-                    <td>C</td>
-                    <td>Regular</td>
-                    <td>20192216</td>
-                    <td>*******</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Justine Podiotan</td>
-                    <td>BSCS</td>
-                    <td>3rd</td>
-                    <td>C</td>
-                    <td>Regular</td>
-                    <td>20191992</td>
-                    <td>*******</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                    </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Jessica Joy Gapusan</td>
-                    <td>BSCS</td>
-                    <td>3rd</td>
-                    <td>C</td>
-                    <td>Regular</td>
-                    <td>20192091</td>
-                    <td>*******</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Jennylyn Riego</td>
-                    <td>BSCS</td>
-                    <td>3rd</td>
-                    <td>C</td>
-                    <td>Regular</td>
-                    <td>20192128</td>
-                    <td>*******</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>Maryjoy Lacopanto</td>
-                    <td>BSCS</td>
-                    <td>3rd</td>
-                    <td>C</td>
-                    <td>Regular</td>
-                    <td>20192127</td>
-                    <td>*******</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td>Jomer Delgado</td>
-                    <td>BSCS</td>
-                    <td>3rd</td>
-                    <td>C</td>
-                    <td>Regular</td>
-                    <td>20192161</td>
-                    <td>*******</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                </tbody>
+              <table id="table-container" class="table table-hover">
+                
               </table>
             </div>
             </div>
@@ -222,7 +179,6 @@
       </div>
     </div>
   </div>
-</div>
             
 <?php 
     }
@@ -232,6 +188,8 @@
     }
 
 ?>
+    <script type="text/javascript" src="assets/js/ajax-script.js"></script>
+
 </body>
 
 </html>
