@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2021 at 10:18 AM
+-- Generation Time: Nov 09, 2021 at 04:03 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -79,16 +79,17 @@ CREATE TABLE `tbl_student` (
   `section` varchar(255) NOT NULL,
   `studno` int(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL
+  `status` varchar(255) NOT NULL,
+  `stud_Stat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_student`
 --
 
-INSERT INTO `tbl_student` (`id`, `firstname`, `lastname`, `midname`, `course`, `year`, `section`, `studno`, `password`, `status`) VALUES
-(1, 'SARAH GRACE ARLYN', 'OBEN', '-', 'BS COMPUTER SCIENCE', 3, 'C', 20191940, '', ''),
-(2, 'JUAN PAOLO', 'ORTEGA', 'Z', 'BSCS', 3, 'C', 20192166, '', '');
+INSERT INTO `tbl_student` (`id`, `firstname`, `lastname`, `midname`, `course`, `year`, `section`, `studno`, `password`, `status`, `stud_Stat`) VALUES
+(1, 'SARAH GRACE ARLYN', 'OBEN', '', 'BSCS', 3, 'C', 20191940, ' UhwmtX4T', 'Active', 'Regular'),
+(2, 'ORTEGA', 'JUAN PAOLO', 'Z', 'BSCS', 3, 'C', 20192166, ' N1ZxEJGz', 'Active', 'Regular');
 
 --
 -- Indexes for dumped tables
