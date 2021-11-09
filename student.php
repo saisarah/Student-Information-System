@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/bootstrap-4/css/bootstrap.min.css">
-    <script type="text/javascript" src="assets/js/filter-table.js"></script>
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/popper.min.js"></script>
     <script type="text/javascript" src="assets/bootstrap-4/js/bootstrap.min.js"></script>
@@ -97,22 +96,22 @@
               <form>
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" placeholder="John" class="form-control">
+                  <input type="text" id="inputfName" placeholder="John" class="form-control" required>
                 </div>
                 <div class="row">
                 <div class="form-group col-md-6">
-                  <label>Last Name</label>
-                  <input type="text" placeholder="Doe"  class="form-control">
+                  <label>Middle Name</label>
+                  <input type="text" id="inputmName" placeholder="Doe"  class="form-control" required>
                 </div>
 
                 <div class="form-group col-md-6">
-                  <label>Middle Name</label>
-                  <input type="text" placeholder="Smith"  class="form-control">
+                  <label>Last Name</label>
+                  <input type="text" id="inputlName" placeholder="Smith"  class="form-control">
                 </div>
                </div>
                 <div class="form-group">
                   <label>Course</label>
-                  <select id="inputCourse" class="form-control">
+                  <select id="inputCourse" class="form-control" required>
                     <option selected>Choose</option>
                     <option>BSCS</option>
                     <option>BSIT</option>
@@ -122,12 +121,12 @@
                 </div>
                 <div class="row">
                   <div class="form-group col-md-4">
-                  <label for="inputState">Student No.</label>
-                  <input type="number" placeholder="Student No."  class="form-control">
+                  <label>Student No.</label>
+                  <input type="number" id="inputStudno" placeholder="Student No."  class="form-control" required>
                 </div>
                 <div class="form-group col-md-4">
                   <label>Year</label>
-                  <select class="form-control">
+                  <select id="inputYear" class="form-control" required>
                     <option selected>Choose</option>
                     <option>1</option>
                     <option>2</option>
@@ -137,7 +136,7 @@
                 </div>
                 <div class="form-group col-md-4">
                   <label>Section</label>
-                  <select class="form-control">
+                  <select id="inputSection" class="form-control" required>
                     <option selected>Choose</option>
                     <option>A</option>
                     <option>B</option>
@@ -152,7 +151,7 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" id="btnAddStud" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
