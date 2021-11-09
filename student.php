@@ -129,10 +129,10 @@
                   <label>Year</label>
                   <select class="form-control">
                     <option selected>Choose</option>
-                    <option>1st</option>
-                    <option>2nd</option>
-                    <option>3rd</option>
-                    <option>4th</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
                   </select>
                 </div>
                 <div class="form-group col-md-4">
