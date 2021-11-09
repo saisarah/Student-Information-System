@@ -59,7 +59,7 @@ function show_data($fetchData){
 }else{
      
   echo "<tr>
-        <td colspan='9'>No Data Found</td>
+        <td colspan='9'>No Data</td>
        </tr>"; 
 }
   echo "</table>";
