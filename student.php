@@ -107,7 +107,7 @@
 
                 <div class="form-group col-md-6">
                   <label>Middle Name</label>
-                  <input type="text" placeholder="Middle Name"  class="form-control">
+                  <input type="text" placeholder="Smith"  class="form-control">
                 </div>
                </div>
                 <div class="form-group">
