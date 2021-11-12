@@ -2,7 +2,6 @@
 /*
 * Database Module
 */
-session_start();
 
     // DB Credentials
     $server_name = "localhost";
