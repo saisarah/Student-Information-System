@@ -155,62 +155,68 @@
             </div>
             <div class="card-body table-responsive">
               <table id="myTable" class="table table-hover">
-                <thead class="text-warning">
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Category</th>
-                  <th>Username</th>
-                  <th>Password</th>
-                  <th>Account Status</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Joemen Barrios</td>
-                    <td>Professor</td>
-                    <td>UCCJoemenBarrios</td>
-                    <td>*****</td>
-                    <td>Active</td>
-                  </tr>
-                   <tr>
-                    <td>2</td>
-                    <td>Raul Gutierrez</td>
-                    <td>Professor</td>
-                    <td>UCCRaulGuttierez</td>
-                    <td>*****</td>
-                    <td>Active</td>
-                    </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Juan Paolo Ortega</td>
-                    <td>Student</td>
-                    <td>20192216</td>
-                    <td>*****</td>
-                    <td>Active</td>
-                    </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Justine Podiotan</td>
-                    <td>Student</td>
-                    <td>20191992</td>
-                    <td>*****</td>
-                    <td>Active</td>
-                    </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Jeffrey Coco</td>
-                    <td>Professor</td>
-                    <td>UCCJeffreyCoco</td>
-                    <td>*****</td>
-                    <td>Active</td>
-                  </tr>
-                  
-                </tbody>
+                
               </table>
             </div>
+            <?php
+            include("modules/dbConn.php");
+
+            $timea = "SELECT UPDATE_TIME FROM   information_schema.tables WHERE TABLE_SCHEMA = 'dbsis'AND TABLE_NAME = 'tbl_student'";
+            $res = $conn->query($timea);
+            while($row = $res->fetch_assoc()) {
+            $time = $row['UPDATE_TIME'];
+            }
+            function timeago($time, $tense='ago') {
+    // declaring periods as static function var for future use
+    static $periods = array('year', 'month', 'day', 'hour', 'minute', 'second');
+
+    // checking time format
+    if(!(strtotime($time)>0)) {
+        return trigger_error("Wrong time format: '$time'", E_USER_ERROR);
+    }
+
+    // getting diff between now and time
+    date_default_timezone_set('UTC');
+
+    $now  = new DateTime('now');
+    $time = new DateTime($time);
+    $diff = $now->diff($time)->format('%y %m %d %h %i %s');
+    // combining diff with periods
+    $diff = explode(' ', $diff);
+    $diff = array_combine($periods, $diff);
+    // filtering zero periods from diff
+    $diff = array_filter($diff);
+    // getting first period and value
+    $period = key($diff);
+    $value  = current($diff);
+
+    // if input time was equal now, value will be 0, so checking it
+    if(!$value) {
+        $period = 'seconds';
+        $value  = 0;
+    } else {
+        // converting days to weeks
+        if($period=='day' && $value>=7) {
+            $period = 'week';
+            $value  = floor($value/7);
+        }
+        // adding 's' to period for human readability
+        if($value>1) {
+            $period .= 's';
+        }
+    }
+
+    // returning timeago
+    return "$value $period $tense";
+    
+}
+
+            ?>
             <div class="card-footer text-muted bg-transparent">
                   <div class="stats">
-                    <i class="fa fa-clock"></i> Last account created 4 minutes ago
+                      <i class='fa fa-clock'></i> Last account created <?php echo timeago(date($time)); // 34 years ago
+  ?>
+
                   </div>
                 </div>
             </div>
@@ -228,8 +234,9 @@
     }
 
 ?>         
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/ajax-script.js"></script>
 </body>
 
 </html>
