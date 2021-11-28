@@ -76,7 +76,8 @@
                                 password : password,
                                 userType : userType,
                                 firstName : firstName,
-                                lastName : lastName
+                                lastName : lastName,
+                               
                             },
                             success: function(data) {
                                 if (data) {

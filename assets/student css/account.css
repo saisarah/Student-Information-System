@@ -1,0 +1,226 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+* body{
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    line-height: 1.6;
+    display: grid;
+    background: #f46b45;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow-x: hidden;
+}
+body .waves{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: -51;
+}
+section{
+        width: 100%;
+        max-width: 1200px;
+        height: fit-content;
+        margin: 135px auto ;
+        color:black;
+        background: rgba(255,255,255, 0.7);
+        backdrop-filter: blur(100rem);
+        border: solid 2px transparent;
+        background-clip: padding-box;
+        box-shadow: 10px 10px 10px 10px rgba(64, 98, 80, 0.2);
+        border-top-right-radius: 2em;
+        border-top-left-radius: 2em;
+        border-bottom-right-radius: 2em ;
+        border-bottom-left-radius: 2em;
+}
+/* #region Navbar */
+.nav-container{
+    max-width: 1200px;
+    margin:  30px auto ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background: transparent; 
+}
+.nav-container .logo{
+    z-index: 1;
+    position: absolute;
+    margin-top: -1em;
+    background: transparent;
+    padding-left: -3px;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    color: #fff;
+    padding: 25px 32px;
+}
+.hamburger{
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    user-select: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    appearance: none;
+}
+.hamburger span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background-color: orange ;
+    border-radius: 6px;
+    z-index: 1;
+    transform-origin: 0 0;
+    transition: 0.4s;
+}
+.hamburger:hover span:nth-child(2){
+    transform: translateX(10px);
+    background-color: #fff;
+}
+.hamburger.is-active span:nth-child(1){
+    transform:translate(0px, -2px) rotate(45deg) ;
+}
+.hamburger.is-active span:nth-child(2){
+    opacity: 0;
+    transform: translateX(15px);
+}
+.hamburger.is-active span:nth-child(3){
+    transform:translate(-3px, 3px) rotate(-45deg) ;
+}
+.hamburger.is-active:hover span{
+    background-color:white;
+}
+.menu{
+    display: none;
+    flex: 1 1 0%;
+    justify-content: flex-end;
+    margin: 0 -16px;
+}
+.menu a{
+    color: #fff;
+    margin: 0 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s;
+    padding: 8px 16px;
+    border-radius: 99px;
+
+}
+.menu a.is-active, .menu a:hover {
+    background-color: orange;
+}
+@media (min-width: 768px){
+    .hamburger{
+        display: none;
+    }
+    .menu{
+        display: flex;
+    }
+
+}
+.mobile-nav{
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    z-index: 98;
+    background-color: darkorange;
+    padding-top: 120px;
+    transition: 0.4s;
+
+}
+.mobile-nav.is-active{
+    left: 0;
+}
+.mobile-nav a{
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    padding: 12px 16px;
+    background-color: lightcoral;
+    color: white;
+    text-decoration: none;
+
+
+}
+.mobile-nav a:hover{
+    background-color:rgb(255, 212, 159) ;
+}
+/* #endregion */
+
+
+/* Content enroll */
+.content-enroll{
+    display: grid;
+    height: auto;
+    color: black;
+    grid-gap:10px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: .4fr .1fr .1fr  1fr 1fr;
+    grid-template-areas: 
+    "student student student student"
+    "semester semester semester semester"
+    "status status section section"
+    " ... ... ... ..."
+    "... ... out change ";
+}
+#Student{
+    grid-area: student;
+    padding-left: 10px;
+}
+#Semester{
+    grid-area: semester;
+    border: 2px solid #fff;
+}
+#Status{
+    grid-area: status;
+    border: 2px solid #fff;
+}
+#Section{
+    grid-area: section;
+    border: 2px solid #fff;
+}
+#button-out{
+    grid-area: out;
+    border: 2px solid #fff;
+    background-color: #0F2027;
+    color: #fff;
+    font-weight: 900;
+    
+}
+#button-change{
+    grid-area: change;
+    border: 2px solid #fff;
+    background-color: #0F2027;
+    color: #fff;
+    font-weight: 900;
+    
+}
+#button-change .change{
+    text-align: center;
+    padding-top: 3px;
+    
+}
+#button-out .out{
+    text-align: center;
+    padding-top: 3px;
+}
+
