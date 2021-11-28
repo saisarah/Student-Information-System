@@ -69,10 +69,23 @@ if (isset($_SESSION['studno'])) {
                     <div class="enrollment-content">Registration (SY. 2021-2022 First Semester)</div>
                 </div>
                 <div id="Status">
-                    <div class="enrollment-content">Status: Regular</div>
+                    <div class="enrollment-content">Status: <?php if (isset($_SESSION['studno'])) {
+                                                                echo $_SESSION['studno'][9]; //status
+
+
+                                                            }
+                                                            ?></div>
                 </div>
                 <div id="Section">
-                    <div class="enrollment-content">Section: BSCS 3C</div>
+                    <div class="enrollment-content">Section: <?php if (isset($_SESSION['studno'])) {
+                                                                    echo $_SESSION['studno'][4]; //course
+                                                                    echo (" ");
+                                                                    echo $_SESSION['studno'][5]; //year
+                                                                    echo $_SESSION['studno'][6]; //section
+
+
+                                                                }
+                                                                ?></div>
                 </div>
                 <div id="button-out">
                     <a href="logout.php">
