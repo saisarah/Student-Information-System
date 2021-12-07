@@ -100,6 +100,7 @@
       </div>
     </form>
     </nav>
+ 
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-4 col-md-6">
@@ -214,9 +215,7 @@
             ?>
             <div class="card-footer text-muted bg-transparent">
                   <div class="stats">
-                      <i class='fa fa-clock'></i> Last account created <?php echo timeago(date($time)); // 34 years ago
-  ?>
-
+                      <i class='fa fa-clock'></i> Last account created 
                   </div>
                 </div>
             </div>

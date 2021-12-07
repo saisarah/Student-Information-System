@@ -22,6 +22,8 @@
                         retVal = "";
                         for (var i = 0, n = charset.length; i < length; ++i) {
                         retVal += charset.charAt(Math.floor(Math.random() * n));
+
+                        
                     }
                     jQuery('#txtGenerated').val(retVal);
                 });
