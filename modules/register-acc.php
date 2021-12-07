@@ -36,7 +36,7 @@ if(is_numeric($username) && $userType == 'Student') {
         if ($studno == $username && $pass != "") {
             echo "Account already existed";
         }elseif ($studno == $username && $pass == ""){
-            $sql = "UPDATE tbl_student SET password = ' $password', status = '$status' WHERE studno = '". $username ."'";
+            $sql = "UPDATE tbl_student SET password = '$encrypted_password', status = '$status' WHERE studno = '". $username ."'";
 
             if ($conn->query($sql) === TRUE) {
                 echo "Account successfully created";
@@ -48,7 +48,7 @@ if(is_numeric($username) && $userType == 'Student') {
         }
 }elseif (is_string($username) && $userType == 'Professor'){
      if ($res->num_rows > 0){
-       $setProf = "UPDATE tbl_Professor SET username = ' $username',  password = ' $password', status = '$status' WHERE firstname = '". $firstName ."' AND lastname = '". $lastName ."'";
+       $setProf = "UPDATE tbl_Professor SET username = ' $username',  password = ' $encrypted_password', status = '$status' WHERE firstname = '". $firstName ."' AND lastname = '". $lastName ."'";
 
             if ($conn->query($setProf) === TRUE) {
                 echo "Account successfully created";
