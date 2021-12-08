@@ -40,9 +40,7 @@ function show_data($fetchData){
   echo "<tr>
 
           <td>".$sn."</td>
-          <td>".$data['lastname'] . " ".$data['firstname']. " ".$data['midname']."</td>
-          <td>".$data['course']."</td>
-          <td>".$data['year']."</td>
+          <td>".$data['lastname'] . " ".$data['firstname']. "</td>
           
    </tr>";
        

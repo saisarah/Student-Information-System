@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/bootstrap-4/css/bootstrap.min.css">
-    <script type="text/javascript" src="assets/js/filter-table.js"></script>
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/popper.min.js"></script>
     <script type="text/javascript" src="assets/bootstrap-4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/filter-table.js"></script>
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
     <title>Admin</title>
 </head>
 
@@ -82,7 +83,45 @@
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
           Add Professor
         </button>
-    </form>
+      </form>
+    <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+               <h4 class="modal-title">Add Professor</h4>
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+             </div>
+             <!-- Modal body -->
+            <div class="modal-body justify-content-center">
+              <form id="modal">
+                <div class="row">
+                <div class="form-group col-md-6">
+                  <label>First Name</label>
+                  <input type="text" id="inputfName" placeholder="John" name="inputfName"  class="form-control required-error">
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label>Last Name</label>
+                  <input type="text" id="inputlName" name="inputlName" placeholder="Doe"  class="form-control required-error">
+                </div>
+               </div>
+                <div class="form-group">
+                  <label>Department</label>
+                  <input type="text" id="inputDept" name="inputDept" class="form-control required-error">
+                </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" id="btnAddProf" class="btn btn-primary">Save changes</button>
+            </div>
+          </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </nav>
       <div class="container-fluid">
         <div class="row">
@@ -93,79 +132,8 @@
               <p class="card-category">Professors with their Respective Accounts</p>
             </div>
             <div class="card-body table-responsive">
-              <table id="myTable" class="table table-hover">
-                <thead class="text-warning">
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Department</th>
-                  <th>Username</th>
-                  <th>Password</th>
-                  <th>Account Status</th>
-                  <th scope="col">Actions</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Joemen Barrios</td>
-                    <td>CSD</td>
-                    <td>UCCJoemenBarrios</td>
-                    <td>*****</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                   <tr>
-                    <td>2</td>
-                    <td>Raul Gutierrez</td>
-                    <td>CSD</td>
-                    <td>UCCRaulGuttierez</td>
-                    <td>*****</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Jerwin Cabral</td>
-                    <td>CSD</td>
-                    <td>UCCJerwinCabral</td>
-                    <td>*****</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                    </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Michael Tan</td>
-                    <td>CSD</td>
-                    <td>UCCMichaelTan</td>
-                    <td>*****</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Jeffrey Coco</td>
-                    <td>CSD</td>
-                    <td>UCCJeffreyCoco</td>
-                    <td>*****</td>
-                    <td>Active</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  
-                </tbody>
+              <table id="table-container" class="table table-hover">
+                
               </table>
             </div>
             </div>
@@ -184,6 +152,7 @@
     }
 
 ?>            
+<script type="text/javascript" src="assets/js/script-prof.js"></script>
 
 </body>
 
