@@ -37,6 +37,8 @@ function show_data($fetchData){
  if(count($fetchData)>0){
       $sn=1;
       foreach($fetchData as $data){ 
+        
+
 
   echo "<tr>
 
@@ -49,8 +51,10 @@ function show_data($fetchData){
           <td>".$data['studno']."</td>
           <td>".$data['status']."</td>
           <td>
-          <button type='button' class='btn btn-success'><i class='fas fa-edit'></i></button>
-          <button type='button' class='btn btn-danger'><i class='far fa-trash-alt'></i></button>
+          <a class='btn btn-success' data-toggle='modal' data-target='#staticBackdrop' id='update_modal<?php echo ".$data['id']."?>'><i class='fas fa-edit'></i></a>
+          <a class='btn btn-danger' href ='deleteStud.php?deleteStudents&id='".$data["id"]."><i class='far fa-trash-alt'></i></a>
+
+
           </td>
    </tr>";
        
