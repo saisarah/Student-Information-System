@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 04:03 PM
+-- Generation Time: Dec 08, 2021 at 12:30 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -53,15 +53,16 @@ CREATE TABLE `tbl_professor` (
   `department` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL
+  `status` varchar(255) NOT NULL,
+  `dateInserted` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_professor`
 --
 
-INSERT INTO `tbl_professor` (`id`, `firstname`, `lastname`, `department`, `username`, `password`, `status`) VALUES
-(1, 'JEFFREY', 'COCO', 'CSD', '', '', '');
+INSERT INTO `tbl_professor` (`id`, `firstname`, `lastname`, `department`, `username`, `password`, `status`, `dateInserted`) VALUES
+(1, 'JEFFREY', 'COCO', 'CSD', '', '', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -80,16 +81,16 @@ CREATE TABLE `tbl_student` (
   `studno` int(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
-  `stud_Stat` varchar(255) NOT NULL
+  `stud_Stat` varchar(255) NOT NULL,
+  `dateInserted` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_student`
 --
 
-INSERT INTO `tbl_student` (`id`, `firstname`, `lastname`, `midname`, `course`, `year`, `section`, `studno`, `password`, `status`, `stud_Stat`) VALUES
-(1, 'SARAH GRACE ARLYN', 'OBEN', '', 'BSCS', 3, 'C', 20191940, ' UhwmtX4T', 'Active', 'Regular'),
-(2, 'ORTEGA', 'JUAN PAOLO', 'Z', 'BSCS', 3, 'C', 20192166, ' N1ZxEJGz', 'Active', 'Regular');
+INSERT INTO `tbl_student` (`id`, `firstname`, `lastname`, `midname`, `course`, `year`, `section`, `studno`, `password`, `status`, `stud_Stat`, `dateInserted`) VALUES
+(1, 'SARAH GRACE ARLYN', 'OBEN', '', 'BSCS', 3, 'C', 20191940, 'L31cia26aR8=', 'Active', 'Regular', '2021-12-08');
 
 --
 -- Indexes for dumped tables
@@ -133,7 +134,7 @@ ALTER TABLE `tbl_professor`
 -- AUTO_INCREMENT for table `tbl_student`
 --
 ALTER TABLE `tbl_student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
