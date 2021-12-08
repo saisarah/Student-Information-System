@@ -177,6 +177,82 @@
           
         </div>
       </div>
+
+<!-- Modal -->
+<form method="post" action="stud-list.php">
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Update Student</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+            <div class="modal-body justify-content-center">
+              <form>
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" name="lastname" placeholder="John" class="form-control" required>
+                </div>
+                <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Middle Name</label>
+                  <input type="text" id="inputmName" placeholder="Doe"  class="form-control" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label>Last Name</label>
+                  <input type="text" id="inputlName" placeholder="Smith"  class="form-control">
+                </div>
+               </div>
+                <div class="form-group">
+                  <label>Course</label>
+                  <select id="inputCourse" class="form-control" required>
+                    <option selected>Choose</option>
+                    <option>BSCS</option>
+                    <option>BSIT</option>
+                    <option>BSEMC</option>
+                    <option>BSIS</option>
+                  </select>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                  <label>Student No.</label>
+                  <input type="number" id="inputStudno" placeholder="Student No."  class="form-control" required>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Year</label>
+                  <select id="inputYear" class="form-control" required>
+                    <option selected>Choose</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Section</label>
+                  <select id="inputSection" class="form-control" required>
+                    <option selected>Choose</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                  </select>
+                </div>
+                 
+              </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   </div>
             
