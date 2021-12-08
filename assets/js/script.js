@@ -1,5 +1,5 @@
 (function() {
-
+    
     var app = {
         initialize: function () {
             this.login.initialize();

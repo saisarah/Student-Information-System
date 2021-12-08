@@ -50,6 +50,7 @@ function show_data($fetchData){
           <td>".$data['studno']."</td>
           <td>".$data['status']."</td>
           
+          
    </tr>";
        
   $sn++; 
