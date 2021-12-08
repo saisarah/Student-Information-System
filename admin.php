@@ -79,7 +79,7 @@
                 Students
                 </div>
                 <div class="card-body info">
-                  <h4 class="count" >55</h4>
+                  <h4 id="total-stud" class="count" >55</h4>
                   <h5 class="category">Total Student</h5>
                   <div class="fa fa-users fa-3x"></div>
                 </div>
@@ -96,7 +96,7 @@
                   Enrolled
                 </div>
                 <div class="card-body info">
-                  <h4 class="count">300</h4>
+                  <h4 id="total-enrolled" class="count">300</h4>
                   <h5 class="category">Student</h5>
                   <div class="circle-wrap">
                     <div class="circle">
@@ -123,7 +123,7 @@
                   Professor
                 </div>
                 <div class="card-body info">
-                  <h4 class="count" >55</h4>
+                  <h4 id="total-prof" class="count" >55</h4>
                   <h5 class="category">Total Professor</h5>
                   <div class="fa fa-user-tie fa-3x"></div>                
                 </div>
@@ -135,49 +135,20 @@
               </div>
             </div>
           </div>
-
+<?php 
+    $today = date('F j, Y');
+?>
           <div class="row">
             <div class="col-lg-6 col-md-12">
               <div class="card border-light mb-3">
                 <div class="card-header card-header-primary card-header-tabs">
                   <h4 class="card-title">Students Stats</h4>
-                  <p class="card-category">New Students on 25th September, 2021</p>
+                  <p id="latest-stud" class="card-category">New Students Today, <?php echo $today; ?></p>
                 </div>
                 <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-warning">
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Course</th>
-                      <th>Year</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
-                        <td>BSCS</td>
-                        <td>1st</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Minerva Hooper</td>
-                        <td>BSIS</td>
-                        <td>1st</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>BSEMC</td>
-                        <td>1st</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>BSIT</td>
-                        <td>1st</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                    <table id="table-stud" class="table table-hover">
+                      
+                    </table>
                 </div>
               </div>
             </div>
@@ -186,37 +157,11 @@
               <div class="card border-light mb-3">
                 <div class="card-header card-header-warning card-header-tabs">
                   <h4 class="card-title">Professor Stats</h4>
-                  <p class="card-category">New Professor on 25th September, 2021</p>
+                  <p class="card-category">New Professor Today, <?php echo $today; ?></p>
                 </div>
                 <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-warning">
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Department</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Jerwin Cabral</td>
-                        <td>CLAS</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Joemen Barrios</td>
-                        <td>CLAS</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Cherry Rose Concha</td>
-                        <td>CLAS</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Jeffrey Coco</td>
-                        <td>CLAS</td>
-                      </tr>
-                    </tbody>
+                  <table id="table-prof" class="table table-hover">
+                    
                   </table>
                 </div>
               </div>
@@ -234,10 +179,12 @@
     }
 
 ?>
-   
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
+           <script type="text/javascript" src="assets/js/ajax-script.js"></script>
+
 </body>
 
 </html>
