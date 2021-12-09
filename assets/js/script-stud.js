@@ -1,27 +1,9 @@
- $.ajax({    
-        type: "GET",
-        url: "modules/dashboard.php",
-        dataType: "html",                  
-        success: function(data){                    
-            $("#table-stud").html(data); 
-           
-        }
-    });
       $.ajax({    
         type: "GET",
-        url: "modules/dashboard1.php",
+        url: "modules/stud-list.php",
         dataType: "html",                  
         success: function(data){                    
             $("#table-container").html(data); 
-           
-        }
-    });
-      $.ajax({    
-        type: "GET",
-        url: "modules/acc-Created.php",
-        dataType: "html",                  
-        success: function(data){                    
-            $("#myTable").html(data); 
            
         }
     });

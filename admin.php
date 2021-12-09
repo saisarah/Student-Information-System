@@ -160,7 +160,7 @@
                   <p class="card-category">New Professor Today, <?php echo $today; ?></p>
                 </div>
                 <div class="card-body table-responsive">
-                  <table id="table-prof" class="table table-hover">
+                  <table id="table-container" class="table table-hover">
                     
                   </table>
                 </div>

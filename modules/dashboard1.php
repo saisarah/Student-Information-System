@@ -26,8 +26,7 @@ function show_data($fetchData){
         <tr>
             <th>#</th>
             <th>Name</th>
-            <th>Course</th>
-            <th>Year</th>
+            <th>Department</th>
         </tr>
      </thead>';
 
@@ -41,7 +40,7 @@ function show_data($fetchData){
 
           <td>".$sn."</td>
           <td>".$data['lastname'] . " ".$data['firstname']. "</td>
-          
+          <td>".$data['department'] . "</td>
    </tr>";
        
   $sn++; 

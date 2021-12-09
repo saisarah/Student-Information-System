@@ -19,9 +19,9 @@
                 this.registerNewUser();
             },
             registerNewUser: function() {
-                var btnAddStud = jQuery('#btnAddProf');
+                var btnAddProf = jQuery('#btnAddProf');
 
-                btnAddStud.click(function() {
+                btnAddProf.click(function() {
                     var firstName = jQuery('#inputfName').val().toUpperCase(),
                         lastName = jQuery('#inputlName').val().toUpperCase(),
                         dept = jQuery('#inputDept').val().toUpperCase(),

@@ -13,7 +13,6 @@
     <script type="text/javascript" src="assets/bootstrap-4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/filter-table.js"></script>
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
     <title>Admin</title>
 </head>
 
@@ -151,8 +150,10 @@
         header("location:index.php");
     }
 
-?>            
+?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
 <script type="text/javascript" src="assets/js/script-prof.js"></script>
+
 
 </body>
 

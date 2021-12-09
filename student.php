@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/bootstrap-4/css/bootstrap.min.css">
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/filter-table.js"></script>
     <script type="text/javascript" src="assets/bootstrap-4/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
     <title>Admin</title>
@@ -93,6 +94,109 @@
              </div>
              <!-- Modal body -->
             <div class="modal-body justify-content-center">
+              <form id="modal">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" id="inputfName" placeholder="John" name="inputfName" class="form-control required-error">
+                </div>
+
+                <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Middle Name</label>
+                  <input type="text" id="inputmName" placeholder="Doe"  class="form-control">
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label>Last Name</label>
+                  <input type="text" id="inputlName" name="inputlName" placeholder="Smith"  class="form-control required-error">
+                </div>
+               </div>
+
+                <div class="form-group">
+                  <label>Course</label>
+                  <select id="inputCourse" name="inputCourse" class="form-control">
+                    <option selected>Choose</option>
+                    <option>BSCS</option>
+                    <option>BSIT</option>
+                    <option>BSEMC</option>
+                    <option>BSIS</option>
+                  </select>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-4">
+                  <label>Student No.</label>
+                  <input type="number" id="inputStudno" name="inputStudno" placeholder="Student No."  class="form-control required-error">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label>Year</label>
+                  <select id="inputYear" name="inputYear" class="form-control">
+                    <option selected>Choose</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label>Section</label>
+                  <select id="inputSection" name="inputSection" class="form-control">
+                    <option selected>Choose</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                  </select>
+                </div>
+              </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" id="btnAddStud" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+           <div class="card border-light mb-3">
+            <div class="card-header card-header-primary card-header-tabs">
+              <h4 class="card-title">Student List</h4>
+              <p class="card-category">Total Student</p>
+            </div>
+            <div class="card-body table-responsive">
+              <table id="table-container" class="table table-hover">
+                
+              </table>
+            </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<!-- Modal -->
+<form method="post" action="stud-list.php">
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Update Student</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+            <div class="modal-body justify-content-center">
               <form>
                 <div class="form-group">
                   <label>First Name</label>
@@ -148,107 +252,9 @@
               </div>
             </form>
       </div>
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" id="btnAddStud" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </nav>
-
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-           <div class="card border-light mb-3">
-            <div class="card-header card-header-primary card-header-tabs">
-              <h4 class="card-title">Student List</h4>
-              <p class="card-category">Total Student</p>
-            </div>
-            <div class="card-body table-responsive">
-              <table id="table-container" class="table table-hover">
-                
-              </table>
-            </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-
-<!-- Modal -->
-<form method="post" action="stud-list.php">
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Update Student</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <!-- Modal body -->
-            <div class="modal-body justify-content-center">
-              <form>
-                <div class="form-group">
-                  <label>First Name</label>
-                  <input type="text" name="lastname" placeholder="John" class="form-control" required>
-                </div>
-                <div class="row">
-                <div class="form-group col-md-6">
-                  <label>Middle Name</label>
-                  <input type="text" id="inputmName" placeholder="Doe"  class="form-control" required>
-                </div>
-
-                <div class="form-group col-md-6">
-                  <label>Last Name</label>
-                  <input type="text" id="inputlName" placeholder="Smith"  class="form-control">
-                </div>
-               </div>
-                <div class="form-group">
-                  <label>Course</label>
-                  <select id="inputCourse" class="form-control" required>
-                    <option selected>Choose</option>
-                    <option>BSCS</option>
-                    <option>BSIT</option>
-                    <option>BSEMC</option>
-                    <option>BSIS</option>
-                  </select>
-                </div>
-                <div class="row">
-                  <div class="form-group col-md-4">
-                  <label>Student No.</label>
-                  <input type="number" id="inputStudno" placeholder="Student No."  class="form-control" required>
-                </div>
-                <div class="form-group col-md-4">
-                  <label>Year</label>
-                  <select id="inputYear" class="form-control" required>
-                    <option selected>Choose</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-4">
-                  <label>Section</label>
-                  <select id="inputSection" class="form-control" required>
-                    <option selected>Choose</option>
-                    <option>A</option>
-                    <option>B</option>
-                    <option>C</option>
-                    <option>D</option>
-                  </select>
-                </div>
-                 
-              </div>
-            </form>
-      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
@@ -265,7 +271,7 @@
     }
 
 ?>
-    <script type="text/javascript" src="assets/js/ajax-script.js"></script>
+    <script type="text/javascript" src="assets/js/script-stud.js"></script>
 
 </body>
 
