@@ -94,28 +94,28 @@
              </div>
              <!-- Modal body -->
             <div class="modal-body justify-content-center">
-              <form id="modal">
+              <form class="regUser" id="modal">
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" id="inputfName" placeholder="John" name="inputfName" class="form-control required-error">
+                  <input type="text" id="inputfName" placeholder="John" name="inputfName" class="form-control border border-secondary required-error">
                 </div>
 
                 <div class="row">
                 <div class="form-group col-md-6">
                   <label>Middle Name</label>
-                  <input type="text" id="inputmName" placeholder="Doe"  class="form-control">
+                  <input type="text" id="inputmName" placeholder="Doe"  class="form-control border border-secondary">
                 </div>
 
                 <div class="form-group col-md-6">
                   <label>Last Name</label>
-                  <input type="text" id="inputlName" name="inputlName" placeholder="Smith"  class="form-control required-error">
+                  <input type="text" id="inputlName" name="inputlName" placeholder="Smith"  class="form-control border border-secondary required-error">
                 </div>
                </div>
 
                 <div class="form-group">
                   <label>Course</label>
-                  <select id="inputCourse" name="inputCourse" class="form-control">
-                    <option selected>Choose</option>
+                  <select id="inputCourse" name="inputCourse" class="form-control border border-secondary required-error">
+                    <option></option>
                     <option>BSCS</option>
                     <option>BSIT</option>
                     <option>BSEMC</option>
@@ -126,13 +126,13 @@
                 <div class="row">
                   <div class="form-group col-md-4">
                   <label>Student No.</label>
-                  <input type="number" id="inputStudno" name="inputStudno" placeholder="Student No."  class="form-control required-error">
+                  <input type="number" id="inputStudno" name="inputStudno" placeholder="Student No."  class="form-control border border-secondary required-error">
                 </div>
 
                 <div class="form-group col-md-4">
                   <label>Year</label>
-                  <select id="inputYear" name="inputYear" class="form-control">
-                    <option selected>Choose</option>
+                  <select id="inputYear" name="inputYear" class="form-control border border-secondary required-error">
+                    <option></option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -142,8 +142,8 @@
 
                 <div class="form-group col-md-4">
                   <label>Section</label>
-                  <select id="inputSection" name="inputSection" class="form-control">
-                    <option selected>Choose</option>
+                  <select id="inputSection" name="inputSection" class="form-control border border-secondary required-error">
+                    <option></option>
                     <option>A</option>
                     <option>B</option>
                     <option>C</option>
@@ -271,7 +271,8 @@
     }
 
 ?>
-    <script type="text/javascript" src="assets/js/script-stud.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="assets/js/script-stud.js"></script>
 
 </body>
 
