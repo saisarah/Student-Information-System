@@ -21,11 +21,8 @@
             registerNewUser: function() {
                 var btnAddProf = jQuery('#btnAddProf');
 
-                btnAddProf.click(function() {
-                    var firstName = jQuery('#inputfName').val().toUpperCase(),
-                        lastName = jQuery('#inputlName').val().toUpperCase(),
-                        dept = jQuery('#inputDept').val().toUpperCase(),
-                        validation_message = jQuery('.alert');
+               // btnAddProf.click(function() {
+                    
 
                           $("#modal").validate({
                             rules: {
@@ -40,26 +37,6 @@
                               },
                               action: "required"
                             },
-                            submitHandler: function (form) {
-                              // Send details to DB
-                        jQuery.ajax({
-                            url: "modules/add-prof.php",
-                            type: "post",
-                            data: {
-                                firstName : firstName,
-                                lastName : lastName,
-                                dept : dept
-                            },
-                            success: function(data) {
-                                if (data) {
-                                    validation_message.hide();
-                                    alert(data);
-                                    window.location.href = 'department.php?registration=' + data;
-                                }
-                            }
-                        }); // END jQuery
-
-                            },
                             messages: {
                               inputfName: {
                                 required: "Please enter some data",
@@ -71,14 +48,35 @@
                                 required: "Please enter some data",
                               },
                               action: "Please provide some data"
+                            },
+                            submitHandler: function (form) {
+                                var firstName = jQuery('#inputfName').val().toUpperCase(),
+                                lastName = jQuery('#inputlName').val().toUpperCase(),
+                                dept = jQuery('#inputDept').val().toUpperCase(),
+                                validation_message = jQuery('.alert');
+                                // Send details to DB
+                                jQuery.ajax({
+                                    url: "modules/add-prof.php",
+                                    type: "post",
+                                    data: {
+                                        firstName : firstName,
+                                        lastName : lastName,
+                                        dept : dept
+                                    },
+                                    success: function(data) {
+                                        if (data) {
+                                            validation_message.hide();
+                                            alert(data);
+                                            window.location.href = 'department.php?added=successfully';
+                                            }
+                                        }
+                                        }); // END jQuery
                             }
-                          });
-
-                        
-                      });
-              }
-            },
-          }
+                        });
+                        // });
+                    }
+                },
+            }
 
     jQuery(document).ready( function() {
         app.initialize();
