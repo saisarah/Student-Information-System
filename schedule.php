@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/bootstrap-4/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/filter-table.js"></script>
+    <script type="text/javascript" src="assets/bootstrap-4/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
     <title>Admin</title>
 </head>
@@ -72,328 +76,141 @@
   <div class="content-container">
     <nav class="navbar navbar-light bg-light  justify-content-between">
       <a class="navbar-brand">Schedule</a>
+      <div class="form-inline">
+      <input type="text" id="myInput" class="form-control mr-sm-2" onkeyup="myFunction()" placeholder="Search for name..">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          Add Schedule
+        </button>
+      </div>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+               <h4 class="modal-title">Add Schedule</h4>
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+             </div>
+             <!-- Modal body -->
+            <div class="modal-body justify-content-center">
+              <form id="modal">
+                
+                <div class="row">
+                <div class="form-group col-md-5">
+                  <label>Code</label>
+                  <div class="input-group mb-3">
+                    <input type="text" id="inputCode" name="inputCode" placeholder="Subject Code" class="form-control border border-secondary required-error">
+                    <div class="input-group-append">
+                      <button class="fa fa-search btn btn-info" id="btnSearch" type="submit"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-7">
+                  <label>Description</label>
+                  <input type="text" id="inputDesc" name="inputDesc" placeholder="Subject Description"  disabled class="form-control border border-secondary required-error">
+                </div>
+               </div>
+
+                <div class="row">
+                  <div class="form-group col-md-6">
+                  <label>Instructor</label>
+                  <input type="text" id="inputInstructor" name="inputInstructor" placeholder="Ex. Matthew Smith"  class="form-control border border-secondary required-error">
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label>Day</label>
+                  <select id="inputDay" name="inputDay" class="form-control border border-secondary required-error">
+                    <option></option>
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="form-group col-md-6">
+                  <label>Start Time</label>
+                  <input type="time" id="inputStart" name="inputStart"  class="form-control border border-secondary required-error">
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label>End Time</label>
+                  <input type="time" id="inputEnd" name="inputEnd" class="form-control border border-secondary required-error">
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="form-group col-md-4">
+                  <label>Course</label>
+                  <select id="inputCourse" name="inputCourse" class="form-control border border-secondary">
+                    <option selected></option>
+                    <option>BSCS</option>
+                    <option>BSIT</option>
+                    <option>BSEMC</option>
+                    <option>BSIS</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label>Year</label>
+                  <select id="inputYear" name="inputYear" class="form-control border border-secondary">
+                    <option selected></option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label>Section</label>
+                  <select id="inputSection" name="inputSection" class="form-control border border-secondary">
+                    <option selected></option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                  </select>                
+                </div>
+              </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" id="btnAddSched" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="card border-light mb-3">
-              <div class="card-header card-header-primary">
-              Students
-            </div>
-            <div class="card-body sched-info">
-              <div class="form-row">
-                <div class="form-group col-md-8">
-                  <label>Code</label>
-                  <input type="text" placeholder="Subject Code" class="form-control">
-                </div>
-                <div class="form-group col-md-4">
-                  <label>Search</label>
-                  <button type="submit" class="btn btn-primary">Search</button>
-                </div>
-                <div class="form-group col-md-12">
-                  <label>Description</label>
-                  <input type="text" placeholder="Subject Description" disabled="" class="form-control">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputState">Day</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>Sunday</option>
-                    <option>Monday</option>
-                    <option>Tuesday</option>
-                    <option>Wednesday</option>
-                    <option>Thursday</option>
-                    <option>Friday</option>
-                    <option>Saturday</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-8">
-                  <label>Time</label>
-                  <input type="time" class="form-control">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputState">Course</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose</option>
-                    <option>BSCS</option>
-                    <option>BSIT</option>
-                    <option>BSEMC</option>
-                    <option>BSIS</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputState">Year</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose</option>
-                    <option>1st</option>
-                    <option>2nd</option>
-                    <option>3rd</option>
-                    <option>4th</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputState">Section</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose</option>
-                    <option>A</option>
-                    <option>B</option>
-                    <option>C</option>
-                    <option>D</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary btnSub">Add Schedule</button>
-              </div>
-              
-            </div>
-          </div>
-          <div class="col-lg-8 col-md-6">
+          
+          <div class="col-md-12">
            <div class="card border-light mb-3">
-            <div class="card-header card-header-primary card-header-tabs">
-              <h4 class="card-title">Student Schedule</h4>
+            <div class="card-header card-header-info card-header-tabs">
+              <h4 class="card-title">Schedule List</h4>
               <p class="card-category">1st Semester A.Y 2021-2022</p>
               <p class="card-category"></p>
             </div>
             <div class="card-body table-responsive">
               <table id="myTable" class="table table-hover">
-                <thead class="text-warning">
-                  <th>ID</th>
-                  <th>Code</th>
-                  <th>Description</th>
-                  <th>Units</th>
-                  <th>Day</th>
-                  <th>Time</th>
-                  <th>Course</th>
-                  <th>Year</th>
-                  <th>Section</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>CCS 110</td>
-                    <td>Networks and Communication</td>
-                    <td>3</td>
-                    <td>Mon</td>
-                    <td>7:00-10:00</td>
-                    <td>BSCS</td>
-                    <td>3</td>
-                    <td>C</td>
-                  </tr>
-                   <tr>
-                    <td>2</td>
-                    <td>CCS 116</td>
-                    <td>Advanced Web Systems</td>
-                    <td>5</td>
-                    <td>Sun | Tues</td>
-                    <td>4:00-6:00 | 6:00-9:00</td>
-                    <td>BSCS</td>
-                    <td>3</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>CSE 102</td>
-                    <td>Graphics and Visual Computing</td>
-                    <td>3</td>
-                    <td>Wed</td>
-                    <td>4:00-7:00</td>
-                    <td>BSCS</td>
-                    <td>3</td>
-                    <td>C</td>
-                    </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>CS 108</td>
-                    <td>Software Engineering 1</td>
-                    <td>3</td>
-                    <td>Sun | Wed</td>
-                    <td>11:00-1:00 | 1:00-2:00</td>
-                    <td>BSCS</td>
-                    <td>3</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>CS 113</td>
-                    <td>Information Assurance and Security</td>
-                    <td>3</td>
-                    <td>Thurs</td>
-                    <td>5:00-8:00</td>
-                    <td>BSCS</td>
-                    <td>3</td>
-                    <td>C</td>
-                  </tr>
-                 
-                </tbody>
+                
               </table>
             </div>
             </div>
           </div>
+          
         </div>
-          <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="card border-light mb-3">
-              <div class="card-header card-header-warning">
-              Professors
-            </div>
-            <div class="card-body sched-info">
-              <div class="form-row">
-                <div class="form-group col-md-8">
-                  <label>Code</label>
-                  <input type="text" placeholder="Subject Code" class="form-control">
-                </div>
-                <div class="form-group col-md-4">
-                  <label>Search</label>
-                  <button type="submit" class="btn btn-primary">Search</button>
-                </div>
-                <div class="form-group col-md-12">
-                  <label>Description</label>
-                  <input type="text" placeholder="Subject Description" disabled="" class="form-control">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputState">Day</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>Sunday</option>
-                    <option>Monday</option>
-                    <option>Tuesday</option>
-                    <option>Wednesday</option>
-                    <option>Thursday</option>
-                    <option>Friday</option>
-                    <option>Saturday</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-8">
-                  <label>Time</label>
-                  <input type="time" class="form-control">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputState">Course</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose</option>
-                    <option>BSCS</option>
-                    <option>BSIT</option>
-                    <option>BSEMC</option>
-                    <option>BSIS</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputState">Year</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose</option>
-                    <option>1st</option>
-                    <option>2nd</option>
-                    <option>3rd</option>
-                    <option>4th</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputState">Section</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose</option>
-                    <option>A</option>
-                    <option>B</option>
-                    <option>C</option>
-                    <option>D</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary btnSub">Add Schedule</button>
-              </div>
-              
-            </div>
-          </div>
-          <div class="col-lg-8 col-md-6">
-           <div class="card border-light mb-3">
-            <div class="card-header card-header-warning card-header-tabs">
-              <h4 class="card-title">Professor Schedule</h4>
-              <p class="card-category">1st Semester A.Y 2021-2022</p>
-              <p class="card-category"></p>
-            </div>
-            <div class="card-body table-responsive">
-              <table id="myTable" class="table table-hover">
-                <thead class="text-warning">
-                  <th>ID</th>
-                  <th>Code</th>
-                  <th>Description</th>
-                  <th>Units</th>
-                  <th>Day</th>
-                  <th>Time</th>
-                  <th>Course</th>
-                  <th>Year</th>
-                  <th>Section</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>CCS 110</td>
-                    <td>Networks and Communication</td>
-                    <td>3</td>
-                    <td>Mon</td>
-                    <td>7:00-10:00</td>
-                    <td>BSCS</td>
-                    <td>3</td>
-                    <td>C</td>
-                  </tr>
-                   <tr>
-                    <td>2</td>
-                    <td>CCS 116</td>
-                    <td>Advanced Web Systems</td>
-                    <td>5</td>
-                    <td>Sun | Tues</td>
-                    <td>4:00-6:00 | 6:00-9:00</td>
-                    <td>BSCS</td>
-                    <td>3</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>CSE 102</td>
-                    <td>Graphics and Visual Computing</td>
-                    <td>3</td>
-                    <td>Wed</td>
-                    <td>4:00-7:00</td>
-                    <td>BSCS</td>
-                    <td>3</td>
-                    <td>C</td>
-                    </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>CS 108</td>
-                    <td>Software Engineering 1</td>
-                    <td>3</td>
-                    <td>Sun | Wed</td>
-                    <td>11:00-1:00 | 1:00-2:00</td>
-                    <td>BSCS</td>
-                    <td>3</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>CS 113</td>
-                    <td>Information Assurance and Security</td>
-                    <td>3</td>
-                    <td>Thurs</td>
-                    <td>5:00-8:00</td>
-                    <td>BSCS</td>
-                    <td>3</td>
-                    <td>C</td>
-                  </tr>
-                 
-                </tbody>
-              </table>
-            </div>
-            </div>
-          </div>
-        </div>
+          
         </div>
 
       </div>
@@ -408,6 +225,9 @@
     }
 
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="assets/js/script-sched.js"></script>
+
 </body>
 
 </html>
