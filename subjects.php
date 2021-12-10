@@ -77,7 +77,11 @@
     <nav class="navbar navbar-light bg-light  justify-content-between">
       <a class="navbar-brand">Subjects</a>
       <div class="form-inline">
-        
+      <input type="text" id="myInput" class="form-control mr-sm-2" onkeyup="myFunction()" placeholder="Search for code..">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          Add Subject
+        </button>
+      </div>
         <!-- The Modal -->
         <div class="modal fade" id="myModal">
           <div class="modal-dialog">
@@ -88,83 +92,35 @@
                <button type="button" class="close" data-dismiss="modal">&times;</button>
              </div>
              <!-- Modal body -->
-            <div class="modal-body row justify-content-center">
-              <div class="form-row">
-                <div class="form-group col-sm-8">
+            <div class="modal-body justify-content-center">
+              <form role="form" id="modal">
+                <div class="row">
+                <div class="form-group col-md-6">
                   <label>Code</label>
-                  <input type="text" placeholder="Subject Code" class="form-control">
+                  <input type="text" id="inputCode" name="inputCode" placeholder="Subject Code" class="form-control border border-secondary required-error">
                 </div>
-                
-                <div class="form-group col-sm-12">
-                  <label>Description</label>
-                  <input type="text" placeholder="Subject Description" disabled="" class="form-control">
+
+                <div class="form-group col-md-6">
+                  <label>Units</label>
+                  <input type="number" id="inputUnits" name="inputUnits" placeholder="Subject Units"  class="form-control border border-secondary required-error">
                 </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-sm-4">
-                  <label for="inputState">Day</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>Sunday</option>
-                    <option>Monday</option>
-                    <option>Tuesday</option>
-                    <option>Wednesday</option>
-                    <option>Thursday</option>
-                    <option>Friday</option>
-                    <option>Saturday</option>
-                  </select>
+               </div>
+                <div class="form-group">
+                  <label>Subject Description</label>
+                  <input type="text" id="inputDesc" name="inputDesc" placeholder="Subject Description"  class="form-control border border-secondary required-error">
                 </div>
-                <div class="form-group col-sm-8">
-                  <label>Time</label>
-                  <input type="time" class="form-control">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-sm-4">
-                  <label for="inputState">Course</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose</option>
-                    <option>BSCS</option>
-                    <option>BSIT</option>
-                    <option>BSEMC</option>
-                    <option>BSIS</option>
-                  </select>
-                </div>
-                <div class="form-group col-sm-4">
-                  <label for="inputState">Year</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose</option>
-                    <option>1st</option>
-                    <option>2nd</option>
-                    <option>3rd</option>
-                    <option>4th</option>
-                  </select>
-                </div>
-                <div class="form-group col-sm-4">
-                  <label for="inputState">Section</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose</option>
-                    <option>A</option>
-                    <option>B</option>
-                    <option>C</option>
-                    <option>D</option>
-                  </select>
-                </div>
-              </div>
-      </div>
+
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="submit" id="btnAddSubj" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
             </div>
           </div>
         </div>
       </div>
-      <input type="text" id="myInput" class="form-control mr-sm-2" onkeyup="myFunction()" placeholder="Search for code..">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-          Add Subject
-        </button>
-    </div>
+      
     </nav>
       <div class="container-fluid">
         <div class="row">
@@ -176,94 +132,15 @@
             </div>
             <div class="card-body table-responsive">
               <table id="myTable" class="table table-hover">
-                <thead class="text-warning">
-                  <th>ID</th>
-                  <th>Code</th>
-                  <th>Description</th>
-                  <th>Units</th>
-                  <th>Action</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>CCS 110</td>
-                    <td>Networks and Communication</td>
-                    <td>3</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                   <tr>
-                    <td>2</td>
-                    <td>CCS 116</td>
-                    <td>Advanced Web Systems</td>
-                    <td>5</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>CSE 102</td>
-                    <td>Graphics and Visual Computing</td>
-                    <td>3</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                    </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>CS 108</td>
-                    <td>Software Engineering 1</td>
-                    <td>3</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>CS 113</td>
-                    <td>Information Assurance and Security</td>
-                    <td>3</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>GEC 007</td>
-                    <td>Science, Technology and Society</td>
-                    <td>3</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td>GEC 008</td>
-                    <td>Ethics</td>
-                    <td>3</td>
-                    <td>
-                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                </tbody>
+                
               </table>
-            </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </body>
+
 <?php 
     }
     else
@@ -272,6 +149,8 @@
     }
 
 ?>            
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="assets/js/script-subj.js"></script>
 
 </body>
 
