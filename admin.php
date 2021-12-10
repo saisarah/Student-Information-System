@@ -92,7 +92,7 @@
             </div>
             <div class="col-xl-4 col-lg-12">
               <div class="card border-light mb-3">
-                <div class="card-header card-header-warning">
+                <div class="card-header card-header-info">
                   Enrolled
                 </div>
                 <div class="card-body info">

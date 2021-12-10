@@ -120,9 +120,9 @@
                 <div class="form-group col-md-12">
                   <label>Password *</label>
                   <div class="input-group mb-3">
-                    <input type="Password" id="txtGenerated" placeholder="Generated Password" class="form-control" placeholder="Recipient's username" disabled>
+                    <input type="Password" id="txtGenerated" placeholder="Generated Password" class="form-control" disabled>
                   <div class="input-group-append">
-                    <button id="btnShowPass" class="far fa-eye-slash"></button>
+                    <button id="btnShowPass" class="btn btn-success far fa-eye-slash"></button>
                   </div>
                 </div>
                 <label>User *</label>
