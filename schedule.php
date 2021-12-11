@@ -77,7 +77,7 @@
     <nav class="navbar navbar-light bg-light  justify-content-between">
       <a class="navbar-brand">Schedule</a>
       <div class="form-inline">
-      <input type="text" id="myInput" class="form-control mr-sm-2" onkeyup="myFunction()" placeholder="Search for name..">
+      <input type="text" id="myInput" class="form-control mr-sm-2" onkeyup="myFunction()" placeholder="Search for code..">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
           Add Schedule
         </button>
@@ -190,7 +190,7 @@
               <p class="card-category"></p>
             </div>
             <div class="card-body table-responsive">
-              <table id="myTable" class="table table-hover">
+              <table id="table-container" class="table table-hover">
                 
               </table>
             </div>

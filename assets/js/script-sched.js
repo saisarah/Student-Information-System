@@ -3,7 +3,7 @@ $.ajax({
   url: "modules/sched-list.php",
   dataType: "html",
   success: function(data){
-    $("#myTable").html(data);
+    $("#table-container").html(data);
   }
 });
 (function() {

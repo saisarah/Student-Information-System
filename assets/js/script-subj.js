@@ -3,7 +3,7 @@
         url: "modules/subj-list.php",
         dataType: "html",                  
         success: function(data){                    
-            $("#myTable").html(data); 
+            $("#table-container").html(data); 
            
         }
     });

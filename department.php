@@ -128,7 +128,7 @@
            <div class="card border-light mb-3">
             <div class="card-header card-header-warning card-header-tabs">
               <h4 class="card-title">Professor List</h4>
-              <p class="card-category">Professors with their Respective Accounts</p>
+              <p class="card-category">Total Professor</p>
             </div>
             <div class="card-body table-responsive">
               <table id="table-container" class="table table-hover">

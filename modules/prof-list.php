@@ -24,8 +24,6 @@ function show_data($fetchData){
             <th>#</th>
             <th>Name</th>
             <th>Department</th>
-            <th>Username</th>
-            <th>Password</th>
             <th>Account Status</th>
             <th>Action</th>
 
@@ -43,8 +41,6 @@ function show_data($fetchData){
           <td>".$sn."</td>
           <td>".$data['lastname'] . " ".$data['firstname']. "</td>
           <td>".$data['department']."</td>
-          <td>".$data['username']."</td>
-          <td>".$data['password']."</td>
           <td>".$data['status']."</td>
           
           <td>

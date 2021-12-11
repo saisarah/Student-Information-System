@@ -128,10 +128,10 @@
            <div class="card border-light mb-3">
             <div class="card-header card-header-primary card-header-tabs">
               <h4 class="card-title">Subject List</h4>
-              <p class="card-category">All Subjects</p>
+              <p class="card-category">Total Subjects</p>
             </div>
             <div class="card-body table-responsive">
-              <table id="myTable" class="table table-hover">
+              <table id="table-container" class="table table-hover">
                 
               </table>
             </div>
