@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2021 at 06:00 PM
+-- Generation Time: Dec 11, 2021 at 07:43 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -54,8 +54,16 @@ CREATE TABLE `tbl_professor` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
-  `dateInserted` date NOT NULL
+  `dateInserted` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_professor`
+--
+
+INSERT INTO `tbl_professor` (`id`, `firstname`, `lastname`, `department`, `username`, `password`, `status`, `dateInserted`) VALUES
+(1, 'JEFFREY', 'COCO', 'CSD', '', '', 'Inactive', '2021-12-11 19:40:51'),
+(2, 'JERWIN', 'CABRAL', 'CSD', '', '', 'Inactive', '2021-12-11 19:41:17');
 
 -- --------------------------------------------------------
 
@@ -81,7 +89,8 @@ CREATE TABLE `tbl_schedule` (
 --
 
 INSERT INTO `tbl_schedule` (`id`, `code`, `description`, `instructor`, `day`, `startT`, `endT`, `course`, `year`, `section`) VALUES
-(1, 'CCS 116', 'ADVANCED WEB SYSTEMS', 'JEFFREY COCO', 'SUNDAY', '4:00 PM', '6:00 PM', 'BSCS ', 3, 'C');
+(1, 'CCS 116', 'ADVANCED WEB SYSTEMS', 'JEFFREY COCO', 'SUNDAY', '11:00 AM', '01:00 PM', 'BSCS', 3, 'C'),
+(2, 'GEC 008', 'SOFTWARE ENGINEERING 1', 'JERWIN CABRAL', 'TUESDAY', '08:00 AM', '10:00 AM', 'BSCS', 3, 'C');
 
 -- --------------------------------------------------------
 
@@ -101,8 +110,17 @@ CREATE TABLE `tbl_student` (
   `password` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
   `stud_Stat` varchar(255) NOT NULL,
-  `dateInserted` date NOT NULL
+  `dateInserted` datetime NOT NULL DEFAULT current_timestamp(),
+  `last_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_student`
+--
+
+INSERT INTO `tbl_student` (`id`, `firstname`, `lastname`, `midname`, `course`, `year`, `section`, `studno`, `password`, `status`, `stud_Stat`, `dateInserted`, `last_update`) VALUES
+(1, 'SARAH GRACE ARLYN', 'OBEN', '', 'BSCS', 3, 'C', 20191940, 'JFBCi4i/Wyk=', 'Active', 'Regular', '2021-12-11 19:25:28', '2021-12-11 18:30:48'),
+(2, 'JUAN PAOLO', 'ORTEGA', '', 'BSCS', 3, 'C', 20192166, '', 'Inactive', 'Regular', '2021-12-11 19:30:09', '2021-12-11 18:30:09');
 
 -- --------------------------------------------------------
 
@@ -116,6 +134,16 @@ CREATE TABLE `tbl_subject` (
   `subunits` int(255) NOT NULL,
   `subdesc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_subject`
+--
+
+INSERT INTO `tbl_subject` (`id`, `subcode`, `subunits`, `subdesc`) VALUES
+(1, 'CCS 110', 3, 'NETWORKS AND COMMUNICATION'),
+(2, 'GEC 007', 3, 'SCIENCE, TECHNOLOGY AND SECURITY'),
+(3, 'CCS 116', 5, 'ADVANCED WEB SYSTEMS'),
+(4, 'GEC 008', 3, 'SOFTWARE ENGINEERING 1');
 
 --
 -- Indexes for dumped tables
@@ -165,25 +193,25 @@ ALTER TABLE `tbl_adminlogin`
 -- AUTO_INCREMENT for table `tbl_professor`
 --
 ALTER TABLE `tbl_professor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_schedule`
 --
 ALTER TABLE `tbl_schedule`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_student`
 --
 ALTER TABLE `tbl_student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_subject`
 --
 ALTER TABLE `tbl_subject`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
