@@ -10,13 +10,41 @@ $.ajax({
   var app = {
     initialize: function () {
       this.addSchedule.initialize();
+     // this.searchCode.initialize();
     },
+    searchCode: {
+            initialize: function() {
+                this.searchForCode();
+            },
+            searchForCode: function() {
+                var btnSearch = jQuery('#btnSearch');
+
+                btnSearch.click(function() {
+                   inputCode = jQuery('#inputCode').val().toUpperCase();
+                   inputDesc = jQuery('#inputCode').val().toUpperCase();
+
+                        jQuery.ajax({
+                          url: "modules/add-sched.php",
+                          type: "post",
+                          data: {
+                            inputCode : inputCode
+                          },
+                          success: function(data){
+                            if (data) {
+                              alert(data);
+                              window.location.href = 'schedule.php?added=successfully';
+                            }
+                          }
+                        });
+                      });
+              }
+            },
     addSchedule: {
       initialize: function() {
         this.addNewSchedule();
       },
       addNewSchedule: function() {
-
+      
         var btnAddSched = jQuery('#btnAddSched');
         $("#modal").validate({
           rules: {
@@ -75,7 +103,6 @@ $.ajax({
         },
         submitHandler: function (form) {
           var code = jQuery('#inputCode').val().toUpperCase(),
-          description = jQuery('#inputDescription').val().toUpperCase(),
           instructor = jQuery('#inputInstructor').val().toUpperCase(),
           day = jQuery('#inputDay').val().toUpperCase(),
           start = jQuery('#inputStart').val().toUpperCase(),
@@ -83,14 +110,16 @@ $.ajax({
           course = jQuery('#inputCourse').val(),
           year = jQuery('#inputYear').val(),
           section = jQuery('#inputSection').val().toUpperCase();
-
+          var firstName = instructor.split(' ').slice(0, -1).join(' ').toUpperCase();
+          var lastName = instructor.split(' ').slice(-1).join(' ').toUpperCase();
           // Send details to DB
           jQuery.ajax({
           url: "modules/add-sched.php",
           type: "post",
           data: {
             code : code,
-            description : description,
+            firstName : firstName,
+            lastName : lastName,
             instructor : instructor,
             day : day,
             start : start,
@@ -100,9 +129,7 @@ $.ajax({
             section : section
           },
           success: function(data){
-            alert("GUMAGANA")
             if (data) {
-              validation_message.hide();
               alert(data);
               window.location.href = 'schedule.php?added=successfully';
             }

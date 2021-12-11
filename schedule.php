@@ -93,24 +93,12 @@
              </div>
              <!-- Modal body -->
             <div class="modal-body justify-content-center">
-              <form id="modal">
+              <form id="modal" name="name">
                 
-                <div class="row">
-                <div class="form-group col-md-5">
+                <div class="form-group">
                   <label>Code</label>
-                  <div class="input-group mb-3">
                     <input type="text" id="inputCode" name="inputCode" placeholder="Subject Code" class="form-control border border-secondary required-error">
-                    <div class="input-group-append">
-                      <button class="fa fa-search btn btn-info" id="btnSearch" type="submit"></button>
-                    </div>
-                  </div>
                 </div>
-
-                <div class="form-group col-md-7">
-                  <label>Description</label>
-                  <input type="text" id="inputDesc" name="inputDesc" placeholder="Subject Description"  disabled class="form-control border border-secondary required-error">
-                </div>
-               </div>
 
                 <div class="row">
                   <div class="form-group col-md-6">
