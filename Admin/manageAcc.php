@@ -5,13 +5,13 @@
      <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/dashboard.css">
-    <link rel="stylesheet" href="assets/bootstrap-4/css/bootstrap.min.css">
-    <script type="text/javascript" src="assets/js/filter-table.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="assets/bootstrap-4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/bootstrap-4/css/bootstrap.min.css">
+    <script type="text/javascript" src="../assets/js/filter-table.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="../assets/bootstrap-4/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
     <title>Admin</title>
 </head>
@@ -23,7 +23,7 @@
 <body>
    <div class="sidebar-container" id="navItem">
   <a href="#" class="navbar-brand">
-    <img src="assets/image/logo.png" height="200">
+    <img src="../assets/image/logo.png" height="200">
   </a>
   <ul class="sidebar-navigation">
     
@@ -107,7 +107,7 @@
 
            <div class="card border-light mb-3">
             <div class="card-header card-header-danger">
-              <h4 class="card-title">Create New Accountt</h4>
+              <h4 class="card-title">Create New Account</h4>
               <p class="card-category"></p>
             </div>
             <div class="card-body">
@@ -160,7 +160,7 @@
               </table>
             </div>
             <?php
-            include("modules/dbConn.php");
+            include("../modules/dbConn.php");
 
             $timea = "SELECT UPDATE_TIME FROM   information_schema.tables WHERE TABLE_SCHEMA = 'dbsis'AND TABLE_NAME = 'tbl_student'";
             $res = $conn->query($timea);
@@ -234,8 +234,8 @@
 
 ?>         
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
-    <script type="text/javascript" src="assets/js/ajax-script.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script type="text/javascript" src="../assets/js/ajax-script.js"></script>
 </body>
 
 </html>

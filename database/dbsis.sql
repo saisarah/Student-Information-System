@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2021 at 07:43 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- Generation Time: Dec 12, 2021 at 08:15 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,8 +62,9 @@ CREATE TABLE `tbl_professor` (
 --
 
 INSERT INTO `tbl_professor` (`id`, `firstname`, `lastname`, `department`, `username`, `password`, `status`, `dateInserted`) VALUES
-(1, 'JEFFREY', 'COCO', 'CSD', '', '', 'Inactive', '2021-12-11 19:40:51'),
-(2, 'JERWIN', 'CABRAL', 'CSD', '', '', 'Inactive', '2021-12-11 19:41:17');
+(2, 'JERWIN', 'CABRAL', 'CSD', ' jerwrin', ' aF1yqqnCaR4=', 'Active', '2021-12-11 19:41:17'),
+(5, 'UNO', 'DOS', 'CSD', ' uno', 'pass', 'Active', '2021-12-12 07:07:27'),
+(6, 'JEFFREY', 'COCO', 'CSD', ' coco', 'pass', 'Active', '2021-12-12 07:52:14');
 
 -- --------------------------------------------------------
 
@@ -120,7 +121,7 @@ CREATE TABLE `tbl_student` (
 
 INSERT INTO `tbl_student` (`id`, `firstname`, `lastname`, `midname`, `course`, `year`, `section`, `studno`, `password`, `status`, `stud_Stat`, `dateInserted`, `last_update`) VALUES
 (1, 'SARAH GRACE ARLYN', 'OBEN', '', 'BSCS', 3, 'C', 20191940, 'JFBCi4i/Wyk=', 'Active', 'Regular', '2021-12-11 19:25:28', '2021-12-11 18:30:48'),
-(2, 'JUAN PAOLO', 'ORTEGA', '', 'BSCS', 3, 'C', 20192166, '', 'Inactive', 'Regular', '2021-12-11 19:30:09', '2021-12-11 18:30:09');
+(2, 'JUAN PAOLO', 'ORTEGA', '', 'BSCS', 3, 'C', 20192166, 'O1tFlJvPGwM=', 'Active', 'Regular', '2021-12-11 19:30:09', '2021-12-12 01:31:44');
 
 -- --------------------------------------------------------
 
@@ -193,7 +194,7 @@ ALTER TABLE `tbl_adminlogin`
 -- AUTO_INCREMENT for table `tbl_professor`
 --
 ALTER TABLE `tbl_professor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_schedule`

@@ -1,6 +1,6 @@
  $.ajax({    
         type: "GET",
-        url: "modules/dashboard.php",
+        url: "../modules/dashboard.php",
         dataType: "html",                  
         success: function(data){                    
             $("#table-stud").html(data); 
@@ -9,7 +9,7 @@
     });
       $.ajax({    
         type: "GET",
-        url: "modules/dashboard1.php",
+        url: "../modules/dashboard1.php",
         dataType: "html",                  
         success: function(data){                    
             $("#table-container").html(data); 
@@ -18,7 +18,7 @@
     });
       $.ajax({    
         type: "GET",
-        url: "modules/acc-Created.php",
+        url: "../modules/acc-Created.php",
         dataType: "html",                  
         success: function(data){                    
             $("#myTable").html(data); 
@@ -53,7 +53,7 @@
 
                         // Send details to DB
                         jQuery.ajax({
-                            url: "modules/add-stud.php",
+                            url: "../modules/add-stud.php",
                             type: "post",
                             data: {
                                 firstName : firstName,

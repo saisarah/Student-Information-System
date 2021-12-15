@@ -5,9 +5,9 @@
      <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/dashboard.css">
-    <link rel="stylesheet" href="assets/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/bootstrap-4/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
     <title>Admin</title>
 </head>
@@ -19,7 +19,7 @@
 ?>
    <div class="sidebar-container" id="navItem">
   <a href="#" class="navbar-brand">
-    <img src="assets/image/logo.png" height="200">
+    <img src="../assets/image/logo.png" height="200">
   </a>
   <ul class="sidebar-navigation">
     <li>
@@ -66,7 +66,7 @@
 </div>
 
 <?php
-    include('modules/dbConn.php');
+    include('../modules/dbConn.php');
 
     $query = "SELECT COUNT(*) AS SUM FROM tbl_student";
     $result = $conn->query($query);
@@ -256,8 +256,8 @@ else echo "Less than 1 minute ago";?>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
-           <script type="text/javascript" src="assets/js/ajax-script.js"></script>
+    <script src="../assets/js/script.js"></script>
+           <script type="text/javascript" src="../assets/js/ajax-script.js"></script>
 
 </body>
 

@@ -1,6 +1,6 @@
 $.ajax({ 
   type: "GET",
-  url: "modules/sched-list.php",
+  url: "../modules/sched-list.php",
   dataType: "html",
   success: function(data){
     $("#table-container").html(data);
@@ -24,7 +24,7 @@ $.ajax({
                    inputDesc = jQuery('#inputCode').val().toUpperCase();
 
                         jQuery.ajax({
-                          url: "modules/add-sched.php",
+                          url: "../modules/add-sched.php",
                           type: "post",
                           data: {
                             inputCode : inputCode
@@ -114,7 +114,7 @@ $.ajax({
           var lastName = instructor.split(' ').slice(-1).join(' ').toUpperCase();
           // Send details to DB
           jQuery.ajax({
-          url: "modules/add-sched.php",
+          url: "../modules/add-sched.php",
           type: "post",
           data: {
             code : code,

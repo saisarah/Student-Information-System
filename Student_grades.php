@@ -11,7 +11,7 @@ if (isset($_SESSION['studno'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../assets/student css/home.css">
+        <link rel="stylesheet" href="assets/student css/home.css">
         <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script>
         <title>UCC SIS | Student</title>
     </head>
@@ -19,15 +19,15 @@ if (isset($_SESSION['studno'])) {
     <body>
 
         <header>
-            <img class="logo" src="../assets/image/ucc logo.png">
+            <img class="logo" src="assets/image/ucc logo.png">
 
             <nav>
                 <ul class="nav_links">
-                    <li><a href="./Student_index.php">HOME</a></li>
-                    <li><a href="./Student_account.php">ACCOUNT</a></li>
-                    <li><a href="./Student_sched.php">SCHEDULE</a></li>
-                    <li><a class="activeForm" href="./Student_grades.php">GRADES</a></li>
-                    <li><a href="./Student_enrollment.php">ENROLLMENT</a></li>
+                    <li><a href="Student_index.php">HOME</a></li>
+                    <li><a href="Student_account.php">ACCOUNT</a></li>
+                    <li><a href="Student_sched.php">SCHEDULE</a></li>
+                    <li><a class="activeForm" href="Student_grades.php">GRADES</a></li>
+                    <li><a href="Student_enrollment.php">ENROLLMENT</a></li>
                 </ul>
             </nav>
             <div class="selector">

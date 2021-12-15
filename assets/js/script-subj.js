@@ -1,6 +1,6 @@
       $.ajax({    
         type: "GET",
-        url: "modules/subj-list.php",
+        url: "../modules/subj-list.php",
         dataType: "html",                  
         success: function(data){                    
             $("#table-container").html(data); 
@@ -43,7 +43,7 @@
                             submitHandler: function (form) {
                               // Send details to DB
                         jQuery.ajax({
-                            url: "modules/add-subj.php",
+                            url: "../modules/add-subj.php",
                             type: "post",
                             data: {
                                 code : code,

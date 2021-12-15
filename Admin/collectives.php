@@ -5,13 +5,13 @@
      <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/dashboard.css">
-    <link rel="stylesheet" href="assets/bootstrap-4/css/bootstrap.min.css">
-    <script type="text/javascript" src="assets/js/filter-table.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="assets/bootstrap-4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/bootstrap-4/css/bootstrap.min.css">
+    <script type="text/javascript" src="../assets/js/filter-table.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="../assets/bootstrap-4/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/b1b0cba1bb.js" crossorigin="anonymous"></script> 
     <title>Admin</title>
 </head>
@@ -24,7 +24,7 @@
 ?>
    <div class="sidebar-container" id="navItem">
   <a href="#" class="navbar-brand">
-    <img src="assets/image/logo.png" height="200">
+    <img src="../assets/image/logo.png" height="200">
   </a>
   <ul class="sidebar-navigation">
     
@@ -268,7 +268,7 @@
     }
     else
     {
-        header("location:index.php");
+        header("location: index.php");
     }
 
 ?>            

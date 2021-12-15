@@ -1,6 +1,6 @@
       $.ajax({    
         type: "GET",
-        url: "modules/prof-list.php",
+        url: "../modules/prof-list.php",
         dataType: "html",                  
         success: function(data){                    
             $("#table-container").html(data); 
@@ -56,7 +56,7 @@
                                 validation_message = jQuery('.alert');
                                 // Send details to DB
                                 jQuery.ajax({
-                                    url: "modules/add-prof.php",
+                                    url: "../modules/add-prof.php",
                                     type: "post",
                                     data: {
                                         firstName : firstName,

@@ -15,10 +15,10 @@ session_start ();
     // Fire request
     if ($result->num_rows > 0) {
         $_SESSION['username'] = $_POST['username'];       
-        header("location: ../admin.php?login=success");
+        header("location: ../Admin/admin.php?login=success");
 
         } else {
-        header("location: ../index.php?Invalid=Please Enter Correct Username and Password ");
+        header("location: ../Admin/index.php?Invalid=Please Enter Correct Username and Password ");
     }
 
     // Close connection ($conn)

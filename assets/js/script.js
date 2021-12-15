@@ -71,7 +71,7 @@
 
                         // Send details to DB
                         jQuery.ajax({
-                            url: "modules/register-acc.php",
+                            url: "../modules/register-acc.php",
                             type: "post",
                             data: {
                                 username : username,

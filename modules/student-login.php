@@ -47,9 +47,9 @@ if ($result->num_rows > 0) {
     );
 
     $_SESSION['studno'] = $studno_array;
-    header("location: ..//student_Section/Student_index.php?login=success");
+    header("location: ../Student_index.php?login=success");
 } else {
-    header("location: ../student_Section/Student_Login.php?Invalid=Please Enter Correct Username and Password ");
+    header("location: ../Student_Login.php?Invalid=Please Enter Correct Username and Password ");
 }
 
 
